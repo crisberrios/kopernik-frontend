@@ -11,7 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <!-- <link rel="stylesheet" href="C:Users\Alexander\Documents\Aptana Studio 3 Workspace\Kompernik\normalize.css"> -->
-        <link rel="stylesheet" href="C:Users\Alexander\Documents\Aptana Studio 3 Workspace\Kompernik\Kompernik.css">
+        <link rel="stylesheet" href="Kopernik.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -20,27 +20,26 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        
-        
+
+
         <div id="header"> <!-- header -->
         	<div id="kwit">
 	        	<p>KWITANSI</p>
-        	</div>
-        	<div id="kwitNumber">
-        		<p id="kwitText">No. <!--<input type="text" autofocus required/> --></p>
-        	</div>
+                </div>
+        	        <div id="kwitNumber">
+        		        <input type="number" size="10" placeholder="NO." pattern="[0-9]{1,10}"/>
+        	        </div>
         	<div id="headText">
-        		<p>www.kopernik.info - kopernik@kopernik.info - Kopernik adalah Yayasan Sosial yang terdaftar di Kementerian Hukum dan HAM</p>
-        		<p>nomor:AHU-5704.AH.01.04. Tahun 2012 dengan Akta Nomor 27 tanggal 18 April 2012 oleh Notaris I Made Pria Dharsana, SH</p>
+        		<p>www.kopernik.info - kopernik@kopernik.info - Kopernik adalah Yayasan Sosial yang terdaftar di Kementerian Hukum dan HAM. Nomor:AHU-5704.AH.01.04. Tahun 2012 dengan Akta Nomor 27 tanggal 18 April 2012 oleh Notaris I Made Pria Dharsana, SH</p>
         	</div>
         	<div id="logo">
-        		<h1>>>KOPERNIK</h1>        	
+        		<h1>>>KOPERNIK</h1>
         	</div>
         </div> <!-- end of header -->
-        
+
         <div id="personalInfo">    <!-- beginning of personalInfo section -->
-        	
-        	<div id="firstRow"> <!-- first row of info -->
+
+        	<div class="row"> <!-- first row of info -->
 	        	<div id="topper">
 	        		<p>INFORMASI GARANSI:</p>
 	        	</div>
@@ -48,80 +47,59 @@
 	        		<p>Melengkapi dan Simpan Kwitansi Untuk Kebutuhan Garansi!</p>
 	        	</div>
 	        </div> <!-- end of first row -->
-       		
-       		<div id="secondRow"> <!-- second row -->
-    			<div id="firstBox"/>   	
-		       		<div id="sameLine"></div>
+
+       		<div class="row"> <!-- second row -->
+    			<div id="firstBox" class="normal-box">
 			       		<div id="firstBoxText">
 		       				<p>NAMA LENGCAP PELANGGAN</p>
 		       			</div>
-		       			<div id="smallBox1"></div>
-       				</div>
-       				<div id="whiteBox"></div>
+		       			<div class="smallBox"></div>
+                    <div class="whiteBox"></div>
        		    </div>
-       			
-       			<div id='connection1'><div>
-       			
-       			<div id='secondBox'>
-       				<div>
-       					<p>JENIS KELAMIN</p>
-       				</div>
-       				<div id="smallBox2"></div>
-       			<div>
+
+       			<div class='connection'><i></i></div>
+
+       			<div id='secondBox' class="normal-box">
+       				<p>JENIS KELAMIN</p>
+       				<div class="smallBox"></div>
        				<button type="button">L</button>
        				<button type="button">P</button>
        			</div>
-       			</div>
-      		
-      		<div id="connection2"><div>
-      		
-      		<div id="thirdBox">
-      	
-      			<div>
+
+      		<div class="connection"><i></i></div>
+
+      		<div id="thirdBox" class="normal-box">
       				<p>NOMOR TELEPON</p>
-      			</div>
-       			<div id="smallBox3"></div>
-       			<div id="whiteBox3"></div>
+       			<div class="smallBox"></div>
+       			<div class="whiteBox"></div>
       		</div>
-      		
-      		<div id="connection3"><div>
-      		
-      		<div id="fourthBox">
-      			
-      			<div>
+
+      		<div class="connection"><i></i></div>
+
+      		<div id="fourthBox" class="normal-box">
       				<p>ALAMAT</p>
-      			</div>
-       			<div id="smallBox4"></div>
-	       			<div id="firstLine">
-	       		<!--		<div value="JL.">JL.</div>
-	       				<div value="RT/RW">RT/RW</div>
-	       				<div value="DS./B">DS./B</div>
-	       				<div value="DS./BR.">DS./BR.</div> -->
-	       			</div>
-	       			<div id="secondLine">
-	       			<!--	<div value="DESA/KEL.">DESA/KEL.</div>
-	       				<div value="KEC.">KEC.</div>
-	       				<div value="KOTA/KAB">KOTA/KAB</div> -->
-	       			</div>
-      		</div> <!-- end of second row -->
-      		
+       			<div class="smallBox"></div>
+                <input class="line" id="alamat-1" type="text" />
+                <input class="line" id="alamat-2" type="text" />
+            </div> <!-- end of second row -->
+
         </div>           <!-- end of personalInfo section -->
-        
-        <div id="thirdRow"> <!-- third row -->
-        	
+
+        <div class="row"> <!-- third row -->
+
 	        	<div id="thirdTopper">
 	        		<p>INFORMASI PRODUK:</p>
 	        	</div>
 	        	<div id="thirdTopperNeighbor">
 	        		<p>INFORMASI HARGA:</p>
-	        	</div> 
+	        	</div>
 	        	<div id="cicil">
 	        		<p>CICIL:</p>
 	        	</div>
         </div> <!-- end of third row -->
-        
+
         <div id="fourthRow"> <!-- fourth row -->
-        	
+
         	<div id="firstBigBox">
         		<div id="rightSide">
 	        		<div id="produk">
@@ -130,19 +108,19 @@
 	        		<div id="whiteBox5"></div>
 	        		<div id="beigeBox1"></div>
 	        		<div id="beigeBox2"></div>
-	        		
+
 	        		<div id="connection4"></div>
 	        		<div id="connection5"></div>
 	        		<div id="connection6"></div>
-	        		
+
 	        	</div>
 	        	<div id="leftSide">
-	        		
+
 	        		<div id="brownBox">
 	        			<div id="beigeBox3"></div>
 	        			<div id="beigeBox4"></div>
 	        		</div>
-	        		
+
 	        		<div id="leftSideTop">
 	        			<div id="nomorSeri">
 	        				<p>NOMOR SERI</p>
@@ -152,7 +130,7 @@
 	        		</div>
 	        	</div>
 	       	</div>
-	       	
+
 	       	<div id="secondBigBox">
 	       		<div id="headerTotal">
 		       		<div id="harga">
@@ -165,7 +143,7 @@
 		       			<p>TOTAL HAGAR</p>
 		       		</div>
 	       		</div>
-	       		
+
 	       		<div id="sum1">
 	       			<div id="firstUnit"></div>
 	       			<div id="multiply1">X</div>
@@ -173,7 +151,7 @@
 	       			<div id="firstEqual">=</div>
 	       			<div id="firstTotal"></div>
 	       		</div>
-	       		
+
 	       		<div id="sum2">
 	       			<div id="secondUnit"></div>
 	       			<div id="multiply2">X</div>
@@ -181,7 +159,7 @@
 	       			<div id="secondEqual">=</div>
 	       			<div id="secondTotal"></div>
 	       		</div>
-	       		
+
 	       		<div id="sum3">
 	       			<div id="thirdUnit"></div>
 	       			<div id="multiply3">X</div>
@@ -189,9 +167,9 @@
 	       			<div id="thirdEqual">=</div>
 	       			<div id="thirdTotal"></div>
 	       		</div>
-	       		
+
 	       	</div>
-	       	
+
 	       	<div id="thirdBigBox">
 	       		<div id="sum1">
 	       			<div>
@@ -207,27 +185,17 @@
 	       				<p>4:</p>
 	       			</div>
 	       		</div>
-	       		
+
 	       	</div>
-        	
-        </div>	        	
-	        
-        	
+
         </div>
-        
+
+
+        </div>
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
     </body>
 </html>
