@@ -9,538 +9,336 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+figure, figcaption, footer, header, menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	}
 
-
-
 body{
 	background:  #DACEB4;
+    font-size: 12px;
 }
-
+.container {
+    width: 1170px; /* default width to support most popular tablets and laptops*/
+    margin: 0 auto;
+}
 
 #kwit, #kwitNumber, #headText, #logo{
 	display: inline-block;
     box-sizing: border-box;
+    height: 50px;
 }
 #header{
 	background: #B2A176;
 	width: 100%;
 	display: block;
-    min-height: 100px;
-    max-height: 500px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     position: relative;
+    float: left;
 }
 
 #kwit{
-    height: 90px;
-    padding: 5px;
+    padding: 7px;
+    float: left;
+    margin-right: 5px;
 }
 
-#kwit>p{
-	color: #8B7741;
-	font-size: 3em;
-	font-family: 'Arial Narrow';
+#kwit>h1 {
+    color: #8B7741;
+    font-size: 2.5em;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-weight: normal;
 }
-
-#kwitNumber{
-	min-width: 200px;
-    width: 20%;
-    height: 90px;
-    padding: 5px;
+#kwitNumber {
+    float: left;
+    padding-top: 5px;
 }
 
 #kwitNumber>input {
+    height: 30px;
     background: #E9E2D2;
-    border-radius: 15px;
-    font-size: 2.5em;
+    border-radius: 10px;
+    font-size: 1.8em;
     color: #8B7741;
-    padding: 2px;
-    margin: auto auto;
+    padding: 5px 0 5px 10px;
+}
+#headText a {
+    text-decoration: none;
+    color: #8B7741;
+    font-weight: bold;
 }
 #headText{
-    min-width: 400px;
-    max-width: 700px;
-    height: 90px;
-    padding: 5px;
+    width: 690px;
+    height: 50px;
+    padding: 10px 0 0 0;
+    margin-left: 10px;
+    float: left;
 }
 
 #headText>p{
-	font-size: 1.2em;
+	font-size: 0.9em;
 	color: #8B7741;
-	font-family: 'Arial Narrow';
+	font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
 
 #logo{
-    height: 90px;
-    min-width: 300px;
-    max-width: 400px;
-    margin-right: 10px;
-    text-align: right;
+    height: 50px;
+    padding-top: 5px;
+    padding-right: 10px;
 	color: #E9E2D2;
 	font-size: 1.3em;
-	font-family: Arial;
+	font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 	font-weight: bold;
+    float: right;
 }
 .normal-box {
-    height: 200px;
-    border-radius: 15px;
+    height: 105px;
+    border-radius: 10px;
     background: #413100;
     color: #FFFFFF;
     float: left;
     position: relative;
     display:block;
+    box-sizing: border-box;
 }
-.normal-box p{
-    color: #FFFFFF;
+.normal-box h2{
     font-size: 1.3em;
-    font-family:"Arial Narrow";
-    padding: 15px;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    padding: 5px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.center {
+    width: 90%;
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.big-box {
+    height: 135px;
+}
+.little-box {
+    height: 70px;
 }
 .smallBox{
-    width: 26px;
-    height: 26px;
+    width: 17px;
+    height: 17px;
     border-radius: 4px;
     background: #FFFFFF;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 6px;
+    right: 6px;
 }
 .whiteBox{
     width: 95%;
     margin: 0 auto;
-    height: 130px;
-    border-radius: 15px;
+    height: 70px;
+    border-radius: 10px;
     background: #FFFFFF;
 }
 
 .connection{
-    height: 200px;
+    min-height: 10px;
     float: left;
     display: block;
+    width: 5px;
 }
-.connection i {
+.pad-connection {
+    padding-top: 40px;
+}
+.big-pad-connection {
+    padding-top: 193px;
+}
+
+.normal-connection {
     display: block;
-    width: 7px;
+    width: 100%;
     height: 20px;
     background: #413100;
-    margin-top: 90px;
+    margin-top: 40px;
 
+}
+.line-connection {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: #413100;
+    margin-top: 20px;
+
+}
+.margin-connection {
+    margin-top: 83px;
+}
+.block-fat {
+display: block;
+float: left;
 }
 .row{
     display: block;
     width: 100%;
 }
-input.line {
-    width: 95%;
-    font-size: 2em;
+input {
+    font-size: 1.6em;
     border-radius: 5px;
-    margin: 7px 5px;
-    padding: 5px;
+    padding: 2px;
     color: #333;
+    text-align: center;
+    border: 0;
+    outline: none;
+}
 
+.line {
+    width: 92%;
+    margin: 2px 3% 2px 3%;
 }
 
 /*First Row of input form */
 
-#topper{
-	width: 220px;
-	border-radius: 15px 15px 0 0;
+.topper{
+    position:relative;
+	border-radius: 5px 5px 0 0;
 	background: #413100;
-	padding: 5px;
+	padding: 2px 5px 0px 5px;
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 15px;
+    margin-top: 3px;
 }
-#topper>p{
-	padding-left: 2px;
-	font-family: "Arial Narrow";
-	font-size: 1.2em;
-	width: 478px;
-	height: 30px;
+.topper>p{
+	font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+	font-size: 0.9em;
+	height: 15px;
 	color: #FFFFFF;
-
-}
-#topperNeighbor{
-	color: #8B7741;
-	font-family: "Arial Narrow";
-	width: 700px;
-	height: 30px;
-	font-size: 1.2em;
     display: inline-block;
 
+}
+/* topper box, maybe DRY with smallBox */
+.topper>i{
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    background: #FFFFFF;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    position: relative;
+    top: 2px;
+
+}
+.topperNeighbor{
+	color: #8B7741;
+	font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+	height: 20px;
+	font-size: 1.3em;
+    display: inline-block;
+    margin-left: 10px;
+
+}
+.tan {
+    background: #C4B693;
+}
+.white {
+    background: #FFF;
+}
+.white>p {
+    color: #C4B693;
 }
 /*Second row of input form */
-#firstBox{
-	width: 470px;
-    margin-left: 10px;
+#namaLengcap{
+	width: 280px;
 }
 
-#secondBox{
-	width: 230px;
+#jenisKelami{
+	width: 170px;
+    text-align: left;
 }
 
-
-#secondBox button{
+#jenisKelami button{
 	background: white;
 	color: #E9E2D2;
-	height: 130px;
-	width: 90px;
+	height: 70px;
+	width: 72px;
 	font-size: 2em;
-	font-family:"Arial Narrow";
+	font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 	border-radius: 10px;
-	decoration: none;
-	margin-left: 15px;
+	margin-left: 8px;
 	font-weight: bold;
+    outline: none;
+    border: 0;
 }
 
-#thirdBox{
-	width: 400px;
+#nomorTelepon{
+	width: 300px;
 }
 
 #fourthBox{
-	width: 500px;
+	width: 400px;
 }
 
-#firstLine{
-	width: 675px;
-	height: 67px;
-	border-radius: 15px;
-	background: #FFFFFF;
-	color: #E9E2D2;
-}
-
-#firstLine>div{
-	color: red/*#E9E2D2*/;
-	font-size: 2em;
-	font-family:"Arial Narrow";
-}
-
-#secondLine{
-	width: 675px;
-	height: 67px;
-	border-radius: 15px;
-	background: #FFFFFF;
-	color: #E9E2D2;
-	float: left;
-}
-
-#thirdTopper{
-	width: 260px;
-	height: 40px;
-	border-radius: 5px;
-	background: #C4B693;
-	padding: 2px;
-	float: left;
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-
-}
-
-#thirdTopperNeighbor{
-	width: 260px;
-	height: 40px;
-	border-radius: 5px;
-	background: #C4B693;
-	padding: 2px;
-	float: left;
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-}
-
-#cicil{
-	width: 176px;
-	height: 40px;
-	border-radius: 5px;
-	background: #C4B693;
-	padding: 2px;
-	float: left;
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #DED0B3;
-}
-
-#firstBigBox{
-	background: #C4B693;
-	width: 811px;
-	height: 270px;
-	border-radius: 15px;
-}
+/*Second row of boxes*/
 
 #produk{
-	float: left;
-	position: relative;
-}
-#produk>p{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-
+	width: 205px;
+    border-radius: 10px 0 0 10px;
 }
 
-#whiteBox5{
-	background: #FFFFFF;
-	width: 320px;
-	height: 62px;
-	border-radius: 10px;
-	margin: 10px;
+#nomorSeri {
+    width: 250px;
+    border-radius: 0 10px 10px 0;
+}
+#tanggal {
+    width: 205px;
+    padding-top: 20px;
+}
+#stempel {
+    width: 245px;
 }
 
-#beigeBox1{
-	background: #E9E2D2;
-	width: 320px;
-	height: 62px;
-	border-radius: 10px;
-	margin: 10px;
-}
-
-#beigeBox2{
-	background: #E9E2D2;
-	width: 320px;
-	height: 62px;
-	border-radius: 10px;
-	margin: 10px;
-}
-
-#leftSideTop{
-	height: 122px;
-	width: 472px;
-	background: #413100;
-	float: right;
-	border-radius: 15px;
-}
-
-#brownBox{
-	height: 164px;
-	background: #B2A176;
-	width: 472px;
-	float: right;
-	border-radius:0 0 15px 15px;
-}
-
-#nomorSeri{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-}
-
-
-
-#whiteBox6{
-	background: #FFFFFF;
-	height: 60px;
-	width: 454px;
-	border-radius: 10px;
-
-#beigeBox3{
-	background: #E9E2D2;
-	width: 454px;
-	height: 62px;
-	border-radius: 10px;
-	margin: 10px;
-}
-
-#beigeBox4{
-	background: #E9E2D2;
-	width: 454px;
-	height: 62px;
-	border-radius: 10px;
-	margin: 10px;
-}
-
-#connection4{
-	top: -200px;
-	width: 20px;
-	height: 20px;
-	background: #413100;
-}
-#connection5{
-	top: -200px;
-	width: 20px;
-	height: 20px;
-	background: #413100;
-}
-#connection6{
-	top: -200px;
-	width: 20px;
-	height: 20px;
-	background: #413100;
-}
-
-#secondBigBox{
-	background: #C4B693;
-	width: 758px;
-	height: 545px;
-	border-radius: 15px;
-}
-
+/*Second part of 2nd row of boxes */
 #harga{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float: left;
+    width: 500px;
+    height: 262px;
+}
+.harga-1, h2.harga-1 {
+    width: 170px;
+}
+.harga-2, h2.harga-2 {
+    width: 70px;
+}
+.line-harga {
+    margin: 2px 1% 2px 1%;
+}
+.harga-pad {
+    width: 100%;
+    display:block;
+    height: 6px;
+}
+.sign {
+    display:inline-block;
+    width: 8px;
+    margin: 0 0;
+    padding: 0 1px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: left;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+}
+#namaPenjual {
+    width: 280px;
+}
+#totalHarga {
+    width: 205px;
+    padding-top: 20px;
+}
+#cicil, #pelanggan {
+    width:200px;
+}
+#cicil {
+    height: 140px;
+    padding-top: 10px;
+}
+#pelanggan {
+    height: 100px;
 }
 
-#jumlah{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float: left;
-}
-
-#total{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float: left;
-}
-
-
-#firstUnit{
-	float: left;
-	height: 62px;
-	width: 280px;
-	background: #FFFFFF;
-	border-radius: 10px;
-	margin-right: 5px;
-}
-
-#multiply1{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float:left;
-	margin-right: 5px;
-	margin-top: 12px;
-}
-
-#firstJumlah{
-	float: left;
-	height: 62px;
-	width: 110px;
-	background: #FFFFFF;
-	border-radius: 10px;
-	margin-right: 3px;
-}
-
-#firstEqual{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float:left;
-	margin-right: 3px;
-	margin-top: 9px;
-}
-
-#firstTotal{
-	float: left;
-	height: 62px;
-	width: 297px;
-	background: #FFFFFF;
-	border-radius: 10px;
-}
-
-
-#secondUnit{
-	float: left;
-	height: 62px;
-	width: 280px;
-	background: #FFFFFF;
-	border-radius: 10px;
-	margin-right: 5px;
-}
-
-#multiply2{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float:left;
-	margin-right: 5px;
-	margin-top: 12px;
-}
-
-#secondJumlah{
-	float: left;
-	height: 62px;
-	width: 110px;
-	background: #FFFFFF;
-	border-radius: 10px;
-	margin-right: 3px;
-}
-
-#secondEqual{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float:left;
-	margin-right: 3px;
-	margin-top: 9px;
-}
-
-#secondTotal{
-	float: left;
-	height: 62px;
-	width: 297px;
-	background: #FFFFFF;
-	border-radius: 10px;
-}
-
-
-#thirdUnit{
-	float: left;
-	height: 62px;
-	width: 280px;
-	background: #FFFFFF;
-	border-radius: 10px;
-	margin-right: 5px;
-}
-
-#multiply3{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float:left;
-	margin-right: 5px;
-	margin-top: 12px;
-}
-
-#thirdJumlah{
-	float: left;
-	height: 62px;
-	width: 110px;
-	background: #FFFFFF;
-	border-radius: 10px;
-	margin-right: 3px;
-}
-
-#thirdEqual{
-	font-size: 1em;
-	font-family:"Arial Narrow";
-	color: #FFFFFF;
-	float:left;
-	margin-right: 3px;
-	margin-top: 9px;
-}
-
-#thirdTotal{
-	float: left;
-	height: 62px;
-	width: 297px;
-	background: #FFFFFF;
-	border-radius: 10px;
-}
-
-#thirdBigBox{
-	background: #C4B693;
-	width: 330px;
-	height: 270px;
-	border-radius: 15px;
-}
-* { outline: dashed 1px hsla(200, 100%, 50%, 0.7) }
