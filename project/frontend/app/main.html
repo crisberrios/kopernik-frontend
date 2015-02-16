@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Kopernik</title>
+  <meta name="description" content="Kopernik Wonder Women Initiative">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+<div id="header"> <!-- header -->
+  <div id="kwit">
+    <h1>KWITANSI</h1>
+  </div>
+  <div id="kwitNumber">
+    <input type="number" class="left" size="15" placeholder="NO." pattern="[0-9]{1,10}"/>
+  </div>
+  <div id="logo">
+    <h1>>>KOPERNIK</h1>
+  </div>
+  <div id="headText">
+    <p><a href="http://www.kopernik.info">www.kopernik.info</a> - <a href="mailto:kopernik@kopernik.info">kopernik@kopernik.info</a>
+      - Kopernik adalah Yayasan Sosial yang terdaftar di Kementerian Hukum dan HAM. </p>
+
+    <p>Nomor:AHU-5704.AH.01.04. Tahun 2012 dengan Akta Nomor 27 tanggal 18 April 2012 oleh Notaris I Made Pria Dharsana,
+      SH</p>
+  </div>
+</div>
+<!-- end of header -->
+
+<div class="container">    <!-- beginning of personalInfo section -->
+
+  <div class="row"> <!-- first row of info -->
+    <div class="topper">
+      <p>INFORMASI GARANSI:</p>
+    </div>
+    <div class="topperNeighbor">
+      <p>Melengkapi dan Simpan Kwitansi Untuk Kebutuhan Garansi!</p>
+    </div>
+  </div>
+  <!-- end of first row -->
+
+  <div class="row"> <!-- second row -->
+    <div id="namaLengcap" class="normal-box">
+      <h2>NAMA LENGCAP PELANGGAN</h2>
+
+      <div class="smallBox"></div>
+      <div class="whiteBox"></div>
+    </div>
+
+    <div class='connection'><i class="normal-connection"></i></div>
+
+    <div id='jenisKelami' class="normal-box">
+      <h2>JENIS KELAMIN</h2>
+
+      <div class="smallBox"></div>
+      <button type="button">L</button>
+      <button type="button">P</button>
+    </div>
+
+    <div class="connection"><i class="normal-connection"></i></div>
+
+    <div id="nomorTelepon" class="normal-box">
+      <h2 class="center">NOMOR TELEPON</h2>
+
+      <div class="smallBox"></div>
+      <div class="whiteBox"></div>
+    </div>
+
+    <div class="connection"><i class="normal-connection"></i></div>
+
+    <div id="fourthBox" class="normal-box">
+      <h2 class="center">ALAMAT</h2>
+
+      <div class="smallBox"></div>
+      <input class="line" id="alamat-1" type="text"/>
+      <input class="line" id="alamat-2" type="text"/>
+    </div>
+    <!-- end of second row -->
+
+  </div>
+  <div class="block-fat">
+    <div class="row">
+      <div class="topper tan">
+        <p>INFORMASI PRODUK</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="normal-box big-box tan" id="produk">
+        <h2 class="center">PRODUK</h2>
+        <input class="line"/>
+        <input class="line"/>
+        <input class="line"/>
+      </div>
+      <div class="normal-box big-box" id="nomorSeri">
+        <h2 class="center">NOMOR SERI</h2>
+
+        <div class="smallBox"></div>
+        <input class="line"/>
+        <input class="line"/>
+        <input class="line"/>
+      </div>
+    </div>
+    <div class="block-fat">
+      <div class="row">
+        <div class="topper">
+          <p>TANGGAL: </p><i></i>
+        </div>
+      </div>
+      <div class="normal-box little-box" id="tanggal">
+        <input type="text" class="line" placeholder="DD / MM / YYYY" pattern="[\d]{1,2}/[\d]{1,2}/[\d]{4}"
+               required/>
+      </div>
+    </div>
+    <div class="connection"></div>
+    <div class="block-fat">
+      <div class="row">
+        <div class="topper white">
+          <p>STEMPEL TA/TR</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="normal-box white" id="stempel"></div>
+      </div>
+    </div>
+  </div>
+  <div class="connection pad-connection">
+    <i class="line-connection"></i>
+    <i class="line-connection"></i>
+    <i class="line-connection"></i>
+    <i class="line-connection margin-connection"></i>
+  </div>
+  <!-- 2nd block from 2nd row -->
+  <div class="block-fat">
+    <div class="row">
+      <div class="topper tan">
+        <p>INFORMASI HARGA</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="normal-box big-box tan" id="harga">
+        <h2 class="harga-1">HARGA PER UNIT</h2>
+        <i class="sign"></i>
+
+        <h2 class="harga-2">JUMLAH</h2>
+        <i class="sign"></i>
+
+        <h2 class="harga-1">TOTAL HARGA</h2>
+        <input class="line harga-1 line-harga"/>
+        <i class="sign">X</i>
+        <input class="line harga-2 line-harga"/>
+        <i class="sign">=</i>
+        <input class="line harga-1 line-harga left" placeholder="Rp."/>
+        <input class="line harga-1 line-harga"/>
+        <i class="sign">X</i>
+        <input class="line harga-2 line-harga"/>
+        <i class="sign">=</i>
+        <input class="line harga-1 line-harga left" placeholder="Rp."/>
+        <input class="line harga-1 line-harga"/>
+        <i class="sign">X</i>
+        <input class="line harga-2 line-harga"/>
+        <i class="sign">=</i>
+        <input class="line harga-1 line-harga left" placeholder="Rp."/>
+
+        <div class="harga-pad"></div>
+        <div class="connection pad-connection">
+          <i class="line-connection"></i>
+        </div>
+        <div class="block-fat">
+          <div class="row">
+            <div class="topper white"><p>NAMA PENJUAL & TELEPON</p></div>
+          </div>
+          <div class="row">
+            <div class="normal-box white" id="namaPenjual"></div>
+          </div>
+        </div>
+        <div class="connection pad-connection">
+          <i class="line-connection"></i>
+        </div>
+        <div class="block-fat">
+          <div class="row">
+            <div class="topper">
+              <p>TOTAL HARGA PESANN</p><i></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="normal-box little-box" id="totalHarga">
+              <input type="number" class="line left" placeholder="Rp."/>
+            </div>
+          </div>
+        </div>
+        <div class="connection pad-connection">
+          <i class="line-connection"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="connection big-pad-connection">
+    <i class="line-connection"></i>
+  </div>
+  <div class="block-fat">
+    <div class="row">
+      <div class="topper tan">
+        <p>CICIL:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="normal-box tan" id="cicil">
+        <input class="line"/>
+        <input class="line"/>
+        <input class="line"/>
+        <input class="line"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="topper white">
+        <p>TANDA TANGGAN PELANGGAN</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="normal-box white" id="pelanggan"></div>
+    </div>
+  </div>
+</div>
+<script src="/scripts/jquery-1.11.2.min.js"></script>
+<script src="/scripts/main.js"></script>
+</body>
+</html>

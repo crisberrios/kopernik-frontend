@@ -26,13 +26,10 @@
     "page": "main.html"
   },
   "web_accessible_resources": [
-    "js/main.js",
-    "js/jquery-1.11.2.min.js"
+    "scripts/main.js",
+    "scripts/jquery-1.11.2.min.js"
   ],
   "offline_enabled": true,
-  "omnibox": {
-    "keyword": "aString"
-  },
   "optional_permissions": ["tabs"],
   "permissions": [
     "tabs",
@@ -42,5 +39,3 @@
   ]
 
 }
-
-
