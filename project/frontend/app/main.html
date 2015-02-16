@@ -20,7 +20,7 @@
     <h1>KWITANSI</h1>
   </div>
   <div id="kwitNumber">
-    <input type="number" class="left" size="15" placeholder="NO." pattern="[0-9]{1,10}"/>
+    <input id="kwitNumber-input" type="number" class="left" size="10" placeholder="NO." pattern="[0-9]{1,10}"/>
   </div>
   <div id="logo">
     <h1>>>KOPERNIK</h1>
@@ -52,7 +52,9 @@
       <h2>NAMA LENGCAP PELANGGAN</h2>
 
       <div class="smallBox"></div>
-      <div class="whiteBox"></div>
+      <div class="whiteBox">
+        <textarea maxlength ="50" rows="2" cols="28" required id="nama-input"></textarea>
+      </div>
     </div>
 
     <div class='connection'><i class="normal-connection"></i></div>
@@ -71,17 +73,19 @@
       <h2 class="center">NOMOR TELEPON</h2>
 
       <div class="smallBox"></div>
-      <div class="whiteBox"></div>
+      <div class="whiteBox">
+        <textarea maxlength ="40" rows="2" cols="25" required id="nomor-telepon-input"></textarea>
+      </div>
     </div>
 
     <div class="connection"><i class="normal-connection"></i></div>
 
-    <div id="fourthBox" class="normal-box">
+    <div id="alamat" class="normal-box">
       <h2 class="center">ALAMAT</h2>
 
       <div class="smallBox"></div>
-      <input class="line" id="alamat-1" type="text"/>
-      <input class="line" id="alamat-2" type="text"/>
+      <input class="line" id="alamat-1-input" type="text" required/>
+      <input class="line" id="alamat-2-input" type="text"/>
     </div>
     <!-- end of second row -->
 
@@ -95,17 +99,17 @@
     <div class="row">
       <div class="normal-box big-box tan" id="produk">
         <h2 class="center">PRODUK</h2>
-        <input class="line"/>
-        <input class="line"/>
-        <input class="line"/>
+        <input class="line" id="produk-1-input"/>
+        <input class="line" id="produk-2-input"/>
+        <input class="line" id="produk-3-input"/>
       </div>
       <div class="normal-box big-box" id="nomorSeri">
         <h2 class="center">NOMOR SERI</h2>
 
         <div class="smallBox"></div>
-        <input class="line"/>
-        <input class="line"/>
-        <input class="line"/>
+        <input class="line" id="nomor-seri-1-input"/>
+        <input class="line" id="nomor-seri-2-input"/>
+        <input class="line" id="nomor-seri-3-input"/>
       </div>
     </div>
     <div class="block-fat">
@@ -115,8 +119,7 @@
         </div>
       </div>
       <div class="normal-box little-box" id="tanggal">
-        <input type="text" class="line" placeholder="DD / MM / YYYY" pattern="[\d]{1,2}/[\d]{1,2}/[\d]{4}"
-               required/>
+        <input type="date" class="line" placeholder="DD / MM / YYYY" id="tanggal-input" required/>
       </div>
     </div>
     <div class="connection"></div>
@@ -127,7 +130,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="normal-box white" id="stempel"></div>
+        <div class="normal-box white" id="stempel">
+          <textarea maxlength ="45" rows="3" cols="20" required id="stempel-input"></textarea>
+        </div>
       </div>
     </div>
   </div>
@@ -153,21 +158,21 @@
         <i class="sign"></i>
 
         <h2 class="harga-1">TOTAL HARGA</h2>
-        <input class="line harga-1 line-harga"/>
+        <input type="number" class="line harga-1 line-harga" id="harga-1-1-input"/>
         <i class="sign">X</i>
-        <input class="line harga-2 line-harga"/>
+        <input type="number" class="line harga-2 line-harga" id="harga-1-2-input"/>
         <i class="sign">=</i>
-        <input class="line harga-1 line-harga left" placeholder="Rp."/>
-        <input class="line harga-1 line-harga"/>
+        <input type="number" class="line harga-1 line-harga left" placeholder="Rp." id="harga-1-3-input"/>
+        <input type="number" class="line harga-1 line-harga" id="harga-2-1-input"/>
         <i class="sign">X</i>
-        <input class="line harga-2 line-harga"/>
+        <input type="number" class="line harga-2 line-harga" id="harga-2-2-input"/>
         <i class="sign">=</i>
-        <input class="line harga-1 line-harga left" placeholder="Rp."/>
-        <input class="line harga-1 line-harga"/>
+        <input type="number" class="line harga-1 line-harga left" placeholder="Rp." id="harga-1-3-input"/>
+        <input type="number" class="line harga-1 line-harga" id="harga-3-1-input"/>
         <i class="sign">X</i>
-        <input class="line harga-2 line-harga"/>
+        <input type="number" class="line harga-2 line-harga" id="harga-3-2-input"/>
         <i class="sign">=</i>
-        <input class="line harga-1 line-harga left" placeholder="Rp."/>
+        <input type="number" class="line harga-1 line-harga left" placeholder="Rp." id="harga-3-3-input"/>
 
         <div class="harga-pad"></div>
         <div class="connection pad-connection">
@@ -178,7 +183,9 @@
             <div class="topper white"><p>NAMA PENJUAL & TELEPON</p></div>
           </div>
           <div class="row">
-            <div class="normal-box white" id="namaPenjual"></div>
+            <div class="normal-box white" id="namaPenjual">
+              <textarea maxlength ="65" rows="3" cols="25" required id="stempel-input"></textarea>
+            </div>
           </div>
         </div>
         <div class="connection pad-connection">
@@ -213,10 +220,10 @@
     </div>
     <div class="row">
       <div class="normal-box tan" id="cicil">
-        <input class="line"/>
-        <input class="line"/>
-        <input class="line"/>
-        <input class="line"/>
+        <input type="number" class="line left" id="cicil-1" placeholder="Rp."/>
+        <input type="number" class="line left" id="cicil-2" placeholder="Rp."/>
+        <input type="number" class="line left" id="cicil-3" placeholder="Rp."/>
+        <input type="number" class="line left" id="cicil-4" placeholder="Rp."/>
       </div>
     </div>
     <div class="row">
@@ -225,7 +232,9 @@
       </div>
     </div>
     <div class="row">
-      <div class="normal-box white" id="pelanggan"></div>
+      <div class="normal-box white" id="pelanggan">
+        <button class="submit" id="submit">SUBMIT</button>
+      </div>
     </div>
   </div>
 </div>

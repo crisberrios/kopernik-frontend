@@ -19,6 +19,8 @@ time, mark, audio, video {
 body {
   background: #DACEB4;
   font-size: 12px;
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
 
 .container {
@@ -50,7 +52,6 @@ body {
 #kwit > h1 {
   color: #8B7741;
   font-size: 2.5em;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-weight: normal;
 }
 
@@ -66,6 +67,7 @@ body {
   font-size: 1.8em;
   color: #8B7741;
   padding: 5px 0 5px 10px;
+  width: 200px;
 }
 
 #headText a {
@@ -75,7 +77,7 @@ body {
 }
 
 #headText {
-  width: 690px;
+  width: 640px;
   height: 50px;
   padding: 10px 0 0 0;
   margin-left: 10px;
@@ -85,7 +87,6 @@ body {
 #headText > p {
   font-size: 0.9em;
   color: #8B7741;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
 
 #logo {
@@ -94,7 +95,6 @@ body {
   padding-right: 10px;
   color: #E9E2D2;
   font-size: 1.3em;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-weight: bold;
   float: right;
 }
@@ -112,7 +112,6 @@ body {
 
 .normal-box h2 {
   font-size: 1.3em;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   padding: 5px;
   margin-left: 5px;
   display: inline-block;
@@ -151,6 +150,9 @@ body {
   height: 70px;
   border-radius: 10px;
   background: #FFFFFF;
+  padding: 8px 10px;
+  font-weight: bold;
+  box-sizing: border-box;
 }
 
 .connection {
@@ -165,7 +167,7 @@ body {
 }
 
 .big-pad-connection {
-  padding-top: 199px;
+  padding-top: 195px;
 }
 
 .normal-connection {
@@ -187,7 +189,7 @@ body {
 }
 
 .margin-connection {
-  margin-top: 89px;
+  margin-top: 85px;
 }
 
 .block-fat {
@@ -214,6 +216,13 @@ input {
   width: 92%;
   margin: 2px 3% 2px 3%;
 }
+textarea {
+  resize: none;
+  color: #333333;
+  line-height: 150%;
+  outline: none;
+  border: none;
+}
 
 /*First Row of input form */
 
@@ -228,7 +237,6 @@ input {
 }
 
 .topper > p {
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 0.9em;
   height: 15px;
   color: #FFFFFF;
@@ -251,7 +259,6 @@ input {
 
 .topperNeighbor {
   color: #8B7741;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 1em;
   display: inline-block;
   margin-left: 10px;
@@ -274,6 +281,9 @@ input {
 #namaLengcap {
   width: 280px;
 }
+#namaLengcap textarea {
+  font-size: 1.27em;
+}
 
 #jenisKelami {
   width: 170px;
@@ -286,7 +296,6 @@ input {
   height: 70px;
   width: 72px;
   font-size: 2em;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   border-radius: 10px;
   margin-left: 8px;
   font-weight: bold;
@@ -297,8 +306,11 @@ input {
 #nomorTelepon {
   width: 300px;
 }
+#nomorTelepon textarea {
+  font-size: 1.5em;
+}
 
-#fourthBox {
+#alamat {
   width: 400px;
 }
 
@@ -322,6 +334,13 @@ input {
 #stempel {
   width: 245px;
 }
+#stempel textarea, #namaPenjual textarea {
+  font-size: 1.4em;
+  padding: 10px;
+  margin: 5px;
+  font-weight: bold;
+  color: #a90000;
+}
 
 /*Second part of 2nd row of boxes */
 #harga {
@@ -344,7 +363,7 @@ input {
 .harga-pad {
   width: 100%;
   display: block;
-  height: 6px;
+  height: 16px;
 }
 
 .sign {
@@ -355,11 +374,14 @@ input {
   font-weight: bold;
   font-size: 1.2em;
   text-align: left;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
 
 #namaPenjual {
   width: 280px;
+}
+#namaPenjual textarea {
+  color: #333;
+
 }
 
 #totalHarga {
@@ -384,3 +406,13 @@ input {
   height: 105px;
 }
 
+button.submit {
+  color: #413100;
+  border: 1px solid #B2A176;
+  padding: 20px;
+  font-size: 3em;
+  border-radius: 10px;
+  background: #DACEB4;
+  margin-top: 8px;
+  margin-left: 10px;
+}
