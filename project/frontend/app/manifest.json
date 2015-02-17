@@ -27,7 +27,8 @@
   },
   "web_accessible_resources": [
     "scripts/main.js",
-    "scripts/jquery-1.11.2.min.js"
+    "scripts/jquery-1.11.2.min.js",
+    "scripts/network.js"
   ],
   "offline_enabled": true,
   "optional_permissions": ["tabs"],
