@@ -31,6 +31,7 @@
     "scripts/network.js"
   ],
   "offline_enabled": true,
+  "content_security_policy": "script-src 'self' http://localhost:8080; object-src 'self'",
   "optional_permissions": ["tabs"],
   "permissions": [
     "tabs",

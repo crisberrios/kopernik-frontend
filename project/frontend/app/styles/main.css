@@ -416,3 +416,13 @@ button.submit {
   margin-top: 8px;
   margin-left: 10px;
 }
+.indicator {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  background: lightgray;
+  border: 1px solid white;
+  border-radius: 50%;
+}
