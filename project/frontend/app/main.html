@@ -50,7 +50,6 @@
   <div class="row"> <!-- second row -->
     <div id="namaLengcap" class="normal-box">
       <h2>NAMA LENGCAP PELANGGAN</h2>
-
       <div class="smallBox"></div>
       <div class="whiteBox">
         <textarea maxlength ="50" rows="2" cols="28" required id="nama-input"></textarea>
@@ -63,8 +62,8 @@
       <h2>JENIS KELAMIN</h2>
 
       <div class="smallBox"></div>
-      <button type="button">L</button>
-      <button type="button">P</button>
+      <button type="button" id="jenisKelami-L">L</button>
+      <button type="button" id="jenisKelami-P">P</button>
     </div>
 
     <div class="connection"><i class="normal-connection"></i></div>
@@ -107,7 +106,7 @@
         <h2 class="center">NOMOR SERI</h2>
 
         <div class="smallBox"></div>
-        <input class="line" id="nomor-seri-1-input"/>
+        <input class="line" id="nomor-seri-1-input" required/>
         <input class="line" id="nomor-seri-2-input"/>
         <input class="line" id="nomor-seri-3-input"/>
       </div>
@@ -119,7 +118,7 @@
         </div>
       </div>
       <div class="normal-box little-box" id="tanggal">
-        <input type="date" class="line" placeholder="DD / MM / YYYY" id="tanggal-input" required/>
+        <input type="date" class="line" placeholder="DD / MM / YYYY" id="tanggal-input" />
       </div>
     </div>
     <div class="connection"></div>
@@ -184,7 +183,7 @@
           </div>
           <div class="row">
             <div class="normal-box white" id="namaPenjual">
-              <textarea maxlength ="65" rows="3" cols="25" required id="stempel-input"></textarea>
+              <textarea maxlength ="65" rows="3" cols="22" required id="nama-telepon-input"></textarea>
             </div>
           </div>
         </div>
@@ -199,7 +198,7 @@
           </div>
           <div class="row">
             <div class="normal-box little-box" id="totalHarga">
-              <input type="number" class="line left" placeholder="Rp."/>
+              <input type="number" class="line left" id="total-harga" placeholder="Rp."/>
             </div>
           </div>
         </div>
