@@ -52,9 +52,9 @@ Submit
 
 //App icon action
 
-$('#txt1').focus(function(){
+$('#nama-input').focus(function(){
 	$('#namaLengcap div:first').addClass('lightgreen')
-		$('#txt1').blur(function(){
+		$('#nama-input').blur(function(){
 			$('#namaLengcap div:first').removeClass('lightgreen')
 		})
 }); 
@@ -66,9 +66,9 @@ $('.gender').on('click',function(){
 		})
 });
 
-$('#txt3').focus(function(){
+$('#nomor-telepon-input').focus(function(){
 	$('#nomorTelepon div:first').addClass('lightgreen')
-		$('#txt3').blur(function(){
+		$('#nomor-telepon-input').blur(function(){
 			$('#nomorTelepon div:first').removeClass('lightgreen')
 		})		
 });
@@ -112,12 +112,4 @@ chrome.browserAction.onClicked.addListener(function(callback) {
 });
 
 
-//Submit action
-$('#submit').click(function(){
-  "use strict";
-  var key = "a";
-  var value = "10";
-  var store = {};
-  store[key]=value;
-  chrome.storage.local.set(store, function(){});
-});
+

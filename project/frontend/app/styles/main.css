@@ -428,13 +428,13 @@ textarea {
 
 button.submit {
   color: #413100;
-  border: 1px solid #B2A176;
-  padding: 20px;
-  font-size: 3em;
+  border: 2px solid #B2A176;
+  padding: 18px 25px 18px 25px;
+  font-size: 3.8em;
   border-radius: 10px;
   background: #DACEB4;
-  margin-top: 8px;
-  margin-left: 10px;
+  margin-top: 6px;
+  margin-left: 9px;
 }
 .indicator {
   width: 20px;

@@ -10,8 +10,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\styles\normalize.css">
-  <link rel="stylesheet" href="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\styles\main.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
       <h2>NAMA LENGCAP PELANGGAN</h2>
       <div class="smallBox"></div>
       <div class="whiteBox">
-        <textarea id="txt1" maxlength ="50" rows="2" cols="28" required id="nama-input" tabindex="2"></textarea>
+        <textarea  maxlength ="50" rows="2" cols="28" required id="nama-input" tabindex="2"></textarea>
       </div>
     </div>
 
@@ -72,7 +72,7 @@
 
       <div class="smallBox"></div>
       <div class="whiteBox">
-        <textarea id="txt3" maxlength ="40" rows="2" cols="25" required id="nomor-telepon-input"></textarea>
+        <textarea  maxlength ="40" rows="2" cols="25" required id="nomor-telepon-input" tabindex="5"></textarea>
       </div>
     </div>
 
@@ -82,8 +82,8 @@
       <h2 class="center">ALAMAT</h2>
 
       <div class="smallBox"></div>
-      <input class="line" id="alamat-1-input" type="text" required/>
-      <input class="line" id="alamat-2-input" type="text"/>
+      <input class="line" id="alamat-1-input" type="text" required tabindex="6" placeholder="JL.           RT/RW       DS./BR."/>
+      <input class="line" id="alamat-2-input" type="text" tabindex="7"  placeholder="DESA./KEL.       KEC      KOTA/KAB."/>
     </div>
     <!-- end of second row -->
 
@@ -105,9 +105,9 @@
         <h2 class="center">NOMOR SERI</h2>
 
         <div class="smallBox"></div>
-        <input class="line" id="nomor-seri-1-input" required/>
-        <input class="line" id="nomor-seri-2-input"/>
-        <input class="line" id="nomor-seri-3-input"/>
+        <input class="line" id="nomor-seri-1-input" required tabindex="8"/>
+        <input class="line" id="nomor-seri-2-input" tabindex="9"/>
+        <input class="line" id="nomor-seri-3-input" tabindex="10"/>
       </div>
     </div>
     <div class="block-fat">
@@ -231,14 +231,15 @@
     </div>
     <div class="row">
       <div class="normal-box white" id="pelanggan">
-        <button class="submit" id="submit">SUBMIT</button>
+        <button type="submit" class="submit" id="submit">KIRIM</button>
       </div>
     </div>
   </div>
 </div>
 <div id="online" class="indicator"></div>
-<script src="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\scripts\jquery-1.11.2.min.js"></script>
-<script src="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\scripts\main.js"></script>
-<script src="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\scripts\network.js"></script>
+<script src="scripts/jquery-1.11.2.min.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/network.js"></script>
+<script src="scripts/temp.js"></script>
 </body>
 </html>
