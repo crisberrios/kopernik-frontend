@@ -1,0 +1,24 @@
+[33mcommit e65f7f35c6865b2921913f427c0f43b89b50e88d[m
+Merge: 2c394cc ae415bd
+Author: alexblackjr <alexblackjr@gmail.com>
+Date:   Fri Feb 13 15:53:13 2015 -0500
+
+    Merge branch 'master' of https://bitbucket.org/crisberrios/kopernikfcc
+
+[33mcommit 2c394cc8eba2096d34b54281f9d7fbe655ba2143[m
+Author: alexblackjr <alexblackjr@gmail.com>
+Date:   Fri Feb 13 15:37:06 2015 -0500
+
+    First draft of html form page. Inputs and buttons will be added.
+
+[33mcommit ae415bdc2d3239388a792c2d0c3ab600e93cba45[m
+Author: Cristián Berríos <cristian.berrios@outlook.cl>
+Date:   Tue Feb 10 17:01:46 2015 -0600
+
+    Changed the project structure to use generator-gulp-webapp yeoman generator.
+
+[33mcommit d8fdf44ae9a02f5fb8c768279b3d2c4f0ee65178[m
+Author: Cristián Berríos <cristian.berrios@outlook.cl>
+Date:   Tue Feb 10 09:44:30 2015 -0600
+
+    First Commit. Initial folder structure and HTML5 Boilerplate as starting point for the interface.

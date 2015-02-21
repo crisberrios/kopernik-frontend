@@ -10,8 +10,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="/styles/normalize.css">
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\styles\normalize.css">
+  <link rel="stylesheet" href="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\styles\main.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
     <h1>KWITANSI</h1>
   </div>
   <div id="kwitNumber">
-    <input id="kwitNumber-input" type="number" class="left" size="10" placeholder="NO." pattern="[0-9]{1,10}"/>
+    <input id="kwitNumber-input" type="number" class="left" size="10" placeholder="NO." pattern="[0-9]{1,10}" tabindex="2"/>
   </div>
   <div id="logo">
     <h1>>>KOPERNIK</h1>
@@ -52,7 +52,7 @@
       <h2>NAMA LENGCAP PELANGGAN</h2>
       <div class="smallBox"></div>
       <div class="whiteBox">
-        <textarea maxlength ="50" rows="2" cols="28" required id="nama-input"></textarea>
+        <textarea id="txt1" maxlength ="50" rows="2" cols="28" required id="nama-input" tabindex="2"></textarea>
       </div>
     </div>
 
@@ -60,10 +60,9 @@
 
     <div id='jenisKelami' class="normal-box">
       <h2>JENIS KELAMIN</h2>
-
       <div class="smallBox"></div>
-      <button type="button" id="jenisKelami-L">L</button>
-      <button type="button" id="jenisKelami-P">P</button>
+      <button type="button" class="gender" id="jenisKelami-L" tabindex="3">L</button>
+      <button type="button" class="gender" id="jenisKelami-P"	tabindex="4">P</button>
     </div>
 
     <div class="connection"><i class="normal-connection"></i></div>
@@ -73,7 +72,7 @@
 
       <div class="smallBox"></div>
       <div class="whiteBox">
-        <textarea maxlength ="40" rows="2" cols="25" required id="nomor-telepon-input"></textarea>
+        <textarea id="txt3" maxlength ="40" rows="2" cols="25" required id="nomor-telepon-input"></textarea>
       </div>
     </div>
 
@@ -114,11 +113,11 @@
     <div class="block-fat">
       <div class="row">
         <div class="topper">
-          <p>TANGGAL: </p><i></i>
+          <p>TANGGAL: </p><i id="firstI"></i>
         </div>
       </div>
       <div class="normal-box little-box" id="tanggal">
-        <input type="date" class="line" placeholder="DD / MM / YYYY" id="tanggal-input" />
+        <input type="date" class="line" value="DD/MM/YYYY" id="tanggal-input" />
       </div>
     </div>
     <div class="connection"></div>
@@ -193,7 +192,7 @@
         <div class="block-fat">
           <div class="row">
             <div class="topper">
-              <p>TOTAL HARGA PESANN</p><i></i>
+              <p>TOTAL HARGA PESANN</p><i id="secondI"></i>
             </div>
           </div>
           <div class="row">
@@ -238,8 +237,8 @@
   </div>
 </div>
 <div id="online" class="indicator"></div>
-<script src="/scripts/jquery-1.11.2.min.js"></script>
-<script src="/scripts/main.js"></script>
-<script src="/scripts/network.js"></script>
+<script src="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\scripts\jquery-1.11.2.min.js"></script>
+<script src="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\scripts\main.js"></script>
+<script src="C:\Users\Alexander\Documents\kopernikfcc\project\frontend\app\scripts\network.js"></script>
 </body>
 </html>

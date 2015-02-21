@@ -51,6 +51,59 @@ Submit
 
 
 //App icon action
+
+$('#txt1').focus(function(){
+	$('#namaLengcap div:first').addClass('lightgreen')
+		$('#txt1').blur(function(){
+			$('#namaLengcap div:first').removeClass('lightgreen')
+		})
+}); 
+
+$('.gender').on('click',function(){
+	$('#jenisKelami div:first').addClass('lightgreen')
+		$('.gender').on('blur',function(){
+			$('#jenisKelami div:first').removeClass('lightgreen')
+		})
+});
+
+$('#txt3').focus(function(){
+	$('#nomorTelepon div:first').addClass('lightgreen')
+		$('#txt3').blur(function(){
+			$('#nomorTelepon div:first').removeClass('lightgreen')
+		})		
+});
+	
+$('#alamat>input').focus(function(){
+	$('#alamat div:first').addClass('lightgreen')
+		$('#alamat>input').blur(function(){
+			$('#alamat div:first').removeClass('lightgreen')
+		})
+});
+	
+$('#nomorSeri>input').focus(function(){
+	$('#nomorSeri div:first').addClass('lightgreen')
+		$('#nomorSeri>input').blur(function(){
+			$('#nomorSeri div:first').removeClass('lightgreen')
+		})
+});
+
+$('#tanggal>input').focus(function(){
+	$('#firstI').css('background','lightgreen')
+		$('#tanggal>input').blur(function(){
+			$('#firstI').css('background','white')
+		})	
+});
+
+$('#totalHarga>input').focus(function(){
+	$('#secondI').css('background','lightgreen')
+		$('#totalHarga>input').blur(function(){
+			$('#secondI').css('background','white')
+		})
+});
+
+
+
+
 //TODO: prevent from opening more tabs
 chrome.browserAction.onClicked.addListener(function(callback) {
   "use strict";

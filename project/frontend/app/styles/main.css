@@ -144,6 +144,18 @@ body {
   right: 6px;
 }
 
+
+.lightgreen{
+	background-color: lightgreen;
+}
+
+.submit:hover{
+	-webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
 .whiteBox {
   width: 95%;
   margin: 0 auto;
@@ -210,6 +222,13 @@ input {
   text-align: center;
   border: 0;
   outline: none;
+}
+
+/*Turns off incriment button in all number fields*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-inner-spin-button{ 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 .line {
@@ -289,6 +308,7 @@ textarea {
   width: 170px;
   text-align: left;
 }
+
 
 #jenisKelami button {
   background: white;
