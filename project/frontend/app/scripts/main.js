@@ -51,8 +51,13 @@ Submit
 
 
 //App icon action
+var kopObject = {
+  total: 0
+};
 
-$(' textarea, input ').focus(function() {
+
+$(' textarea, input:not(.line-harga)').focus(function() {
+  'use strict';
   $(this)
     .closest('.normal-box:not(.little-box), .block-fat')
     .find('.row>.topper>i, .smallBox')
@@ -60,12 +65,12 @@ $(' textarea, input ').focus(function() {
     .removeClass('white');
 })
   .blur(function() {
+    'use strict';
     $(this).closest('.normal-box:not(.little-box), .block-fat')
       .find('.row>.topper>i, .smallBox')
       .addClass('white')
       .removeClass('lightgreen');
-  })
-;
+  });
 
 
 $('.gender').on('click',function(){
@@ -73,6 +78,31 @@ $('.gender').on('click',function(){
 		$('.gender').on('blur',function(){
 			$('#jenisKelami div:first').removeClass('lightgreen')
 		});
+});
+
+$('.line-harga').keyup(function() {
+  "use strict";
+  //harga-1-1-input
+  var jumlah, hargaPerUnit, lineTotal=0;
+  var subTotal = [];
+  for(var i=1; i<=3 ;i++) {
+    hargaPerUnit = parseInt($('#harga-'+i+'-1-input').val(),10);
+    jumlah = parseInt($('#harga-'+i+'-2-input').val(),10);
+    if (Number.isInteger(hargaPerUnit) && Number.isInteger(jumlah)) {
+      lineTotal = hargaPerUnit*jumlah;
+      subTotal.push(lineTotal);
+      $('#harga-'+i+'-3-input').val(lineTotal);
+      }
+    else {
+      $('#harga-'+i+'-3-input').val("Rp.");
+    }
+  }
+  if(subTotal.length > 0) {
+    $('#total-harga').val(subTotal.reduce(function(a,b) {
+      return a+b;
+    }));
+  }
+
 });
 
 
