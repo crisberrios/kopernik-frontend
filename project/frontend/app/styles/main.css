@@ -149,6 +149,9 @@ body {
 	background-color: lightgreen;
 }
 
+.lightblue{
+	background-color: lightblue;
+}
 
 .submit:hover{
 	-webkit-transform: scale(1.1);
