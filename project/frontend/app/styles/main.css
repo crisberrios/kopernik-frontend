@@ -149,6 +149,7 @@ body {
 	background-color: lightgreen;
 }
 
+
 .submit:hover{
 	-webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -225,10 +226,10 @@ input {
 }
 
 /*Turns off incriment button in all number fields*/
-input[type=number]::-webkit-inner-spin-button, 
-input[type=date]::-webkit-inner-spin-button{ 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=date]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .line {
@@ -268,7 +269,6 @@ textarea {
   width: 13px;
   height: 13px;
   border-radius: 2px;
-  background: #FFFFFF;
   display: inline-block;
   margin: 0 0 0 5px;
   position: relative;
