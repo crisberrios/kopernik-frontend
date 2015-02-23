@@ -66,14 +66,16 @@ $(' textarea, input:not(.line-harga)').focus(function() {
       .removeClass('lightgreen');
   });
 
+
 //Gender input behaviour
-$('.gender').click(function() {
-  "use strict";
-  $('.gender').removeClass('lightgreen');
-  $(this).addClass('lightgreen');
-  $('.gender').val('');
-  $(this).val($(this).attr('placeholder'));
+$('.gender').on('click',function(){
+	$('#jenisKelami div:first').addClass('lightgreen')
+		$('.gender').on('blur',function(){
+			$('#jenisKelami div:first').removeClass('lightgreen')
+		});
 });
+
+
 
 //Price inputs math behaviour
 $('.line-harga').keyup(function() {

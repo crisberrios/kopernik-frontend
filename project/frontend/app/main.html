@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="styles/normalize.css">
@@ -24,7 +25,8 @@
     <input id="kwitNumber-input" type="number" class="left" size="10" placeholder="NO." pattern="[0-9]{1,10}" tabindex="2"/>
   </div>
   <div id="logo">
-    <h1>>>KOPERNIK</h1>
+   	<img src="images/kopernik-logo-global.png" />
+    
   </div>
   <div id="headText">
     <p><a href="http://www.kopernik.info">www.kopernik.info</a> - <a href="mailto:kopernik@kopernik.info">kopernik@kopernik.info</a>
@@ -59,13 +61,21 @@
 
     <div class='connection'><i class="normal-connection"></i></div>
 
+	<div id='jenisKelami' class="normal-box">
+		<h2>JENIS KELAMIN</h2>
+	    <div class="smallBox"></div>
+		    <button type="button" class="gender" id="jenisKelami-L" tabindex="3">L</button>
+	        <button type="button" class="gender" id="jenisKelami-P"	tabindex="4">P</button>
+	</div>
+
+<!--
     <div id='jenisKelami' class="normal-box">
       <h2>JENIS KELAMIN</h2>
       <div class="smallBox"></div>
       <input type="text" class="gender" id="jenisKelami-L" tabindex="3" placeholder="L" />
       <input type="text" class="gender" id="jenisKelami-P"	tabindex="4" placeholder="P" />
     </div>
-
+-->
     <div class="connection"><i class="normal-connection"></i></div>
 
     <div id="nomorTelepon" class="normal-box">

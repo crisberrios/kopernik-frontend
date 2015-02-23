@@ -1,3 +1,18 @@
+ //button selection
+ $('#jenisKelami-L , #jenisKelami-P').click(function(){
+ 	if(this.id == 'jenisKelami-L'){
+ 		$('#jenisKelami-L').css('background-color','#CCCC66')
+ 		$('#jenisKelami-P').css('background-color','white')
+ 		$('.gender').attr("value","male");
+ 		//alert($('button').val());
+   	}else{
+ 		$('#jenisKelami-P').css('background-color','#CCCC66')
+ 		$('#jenisKelami-L').css('background-color','white')
+ 		$('.gender').attr("value","female");
+ 		//alert($('button').val());
+	}
+ });
+
 $('#submit').click(function(){
 
   "use strict";
@@ -33,6 +48,7 @@ $('#submit').click(function(){
     kioskID: $("#stempel-input").val(),
     kioskNameNumber: $("#nama-telepon-input").val()
   };
+  
   kpn.store(JSON.stringify(obj));
 });
 
