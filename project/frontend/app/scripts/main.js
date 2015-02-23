@@ -69,17 +69,16 @@ $(' textarea, input:not(.line-harga)').focus(function() {
 
 //Gender input behaviour
 $('.gender').on('click',function(){
-	$('#jenisKelami div:first').addClass('lightgreen')
+  'use strict';
+	$('#jenisKelami div:first').addClass('lightgreen');
 		$('.gender').on('blur',function(){
-			$('#jenisKelami div:first').removeClass('lightgreen')
+			$('#jenisKelami div:first').removeClass('lightgreen');
 		});
 });
 
-
-
 //Price inputs math behaviour
 $('.line-harga').keyup(function() {
-  "use strict";
+  'use strict';
   var jumlah, hargaPerUnit, lineTotal=0;
   var subTotal = [];
   for(var i=1; i<=3 ;i++) {
@@ -91,7 +90,7 @@ $('.line-harga').keyup(function() {
       $('#harga-'+i+'-3-input').val(lineTotal);
       }
     else {
-      $('#harga-'+i+'-3-input').val("Rp.");
+      $('#harga-'+i+'-3-input').val('Rp.');
     }
   }
   if(subTotal.length > 0) {
@@ -102,23 +101,23 @@ $('.line-harga').keyup(function() {
 });
 //submit hover animation
 $('.submit').hover(function(){
-  "use strict";
+  'use strict';
   $(this).animate({
     opacity: 1
   },400);
 },function(){
-  "use strict";
+  'use strict';
   $(this).animate({
     opacity: 0.7
   },400);
 });
 //Enable submit only on critical data filled in
 $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
-  "use strict";
+  'use strict';
   if(!$(this).val()) {
-    $(this).addClass("red");
+    $(this).addClass('red');
   } else {
-    $(this).removeClass("red");
+    $(this).removeClass('red');
   }
   if($('#nomor-seri-1-input').val() && $('#stempel-input').val() && $('#total-harga').val()) {
     $('.submit').fadeIn();
@@ -126,15 +125,15 @@ $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
     $('.submit').fadeOut();
   }
 }).keyup(function(){
-  "use strict";
+  'use strict';
   $(this).change();
 });
 
 
 //TODO: prevent from opening more tabs
 //main icon action
-chrome.browserAction.onClicked.addListener(function(callback) {
-  "use strict";
-  var action_url = chrome.extension.getURL("main.html");
-  chrome.tabs.create({ url: action_url });
+chrome.browserAction.onClicked.addListener(function() {
+  'use strict';
+  var actionUrl = chrome.extension.getURL('main.html');
+  chrome.tabs.create({ url: actionUrl });
 });

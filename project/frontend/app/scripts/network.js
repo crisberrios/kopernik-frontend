@@ -17,7 +17,7 @@ kpn.checkOnline = function checkOnline() {
 };
 
 kpn.onlineHandler = function onlineHandler() {
-  "use strict";
+  'use strict';
   var nameSpace = this.nameSpace;
   $('.indicator').css('background','lightgreen');
   chrome.storage.local.get(nameSpace,function(arr) {
@@ -25,15 +25,14 @@ kpn.onlineHandler = function onlineHandler() {
       console.log('sending items: ' + JSON.stringify(arr));
       kpn.sendItems(arr);
     } else {
-      console.log("no items to send");
+      console.log('no items to send');
     }
   });
 };
 
 kpn.sendItems = function sendItems(arr) {
-  "use strict";
+  'use strict';
   var context = this;
-  var nameSpace = this.nameSpace;
   if(!this.lock) {
     $.post(this.dataServer, JSON.stringify({'data': arr}))
       .success(function () {
@@ -41,20 +40,20 @@ kpn.sendItems = function sendItems(arr) {
         context.clearStorage(); // clear stored objects;
       })
       .fail(function () {
-        console.log('Error when sending key:' + key + ' value:' + value);
+        console.log('Error when sending data');
       });
   }
 };
 
 kpn.init = function init(nameSpace) {
-  "use strict";
+  'use strict';
   nameSpace = nameSpace || this.nameSpace;
   this.nameSpace = this.nameSpace || nameSpace;
   var initObj = {};
   initObj[nameSpace] = [];
   chrome.storage.local.get(nameSpace,function(obj) {
     if(Object.keys(obj).indexOf(nameSpace) <0) {
-      console.log (nameSpace+" not found, initializing");
+      console.log (nameSpace+' not found, initializing');
       chrome.storage.local.set(initObj);
     }
     });
@@ -67,14 +66,14 @@ kpn.start = function start(interval) {
   }, interval);
 };
 kpn.store = function store(obj) {
-  "use strict";
+  'use strict';
   this.init(this.nameSpace);
   this.lock = true; // prevent race condition when sending
   var context = this;
   var nameSpace = this.nameSpace;
   var storageObj = {};
    chrome.storage.local.get(nameSpace,function(arr) {
-     console.log("arr:" + JSON.stringify(arr));
+     console.log('arr:' + JSON.stringify(arr));
      var tmp = arr[nameSpace];
      tmp.push(obj);
      storageObj[nameSpace] = tmp;
@@ -84,14 +83,14 @@ kpn.store = function store(obj) {
   });
 };
 kpn.clearStorage = function clearStorage() {
-  "use strict";
+  'use strict';
   chrome.storage.local.clear();
   this.init();
-}
+};
 
 //handler for online status
 $(document).on('online',function() {
-  "use strict";
+  'use strict';
   kpn.onlineHandler();
 });
 //let's init the storage
