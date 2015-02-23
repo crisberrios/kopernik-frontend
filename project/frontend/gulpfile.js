@@ -7,15 +7,14 @@ var $ = require('gulp-load-plugins')();
 gulp.task('styles', function () {
   return gulp.src('app/styles/*.css')
     .pipe($.plumber())
-    .pipe($.autoprefixer({browsers: ['last 1 version']}))
-    .pipe(gulp.dest('.tmp/styles'));
+    .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('jshint', function () {
   return gulp.src(['app/scripts/**/*.js','!app/scripts/**/jquery*.js'])
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.jshint.reporter('fail'))
+    .pipe($.jshint.reporter('fail'));
 });
 
 gulp.task('html', ['styles'], function () {
