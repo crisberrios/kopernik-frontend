@@ -18,9 +18,9 @@ time, mark, audio, video {
 
 body {
   background: #DACEB4;
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "proxima_nova_rgregular","Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
 
 .container {
@@ -285,7 +285,7 @@ textarea {
   background: #FFF;
 }
 .red {
-  background : #ffe2d9;
+  background : #fff0ed;
   box-sizing: padding-box;
   border: 1px solid red;
 }
@@ -361,15 +361,14 @@ p.stempel-text{
   color: #cd564a;
   font-weight: bold;
   padding-left: 30px;
-  padding-top: 5px;
-
+  padding-top: 2px;
 }
 #stempel input {
   color: #a90000;
   font-weight: bold;
 }
 #namaPenjual textarea {
-  font-size: 1.4em;
+  font-size: 1.3em;
   padding: 10px;
   margin: 5px;
   font-weight: bold;
@@ -397,7 +396,7 @@ p.stempel-text{
 .harga-pad {
   width: 100%;
   display: block;
-  height: 16px;
+  height: 5px;
 }
 
 .sign {
