@@ -356,7 +356,19 @@ textarea {
 #stempel {
   width: 245px;
 }
-#stempel textarea, #namaPenjual textarea {
+p.stempel-text{
+  font-size: 2em;
+  color: #cd564a;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 5px;
+
+}
+#stempel input {
+  color: #a90000;
+  font-weight: bold;
+}
+#namaPenjual textarea {
   font-size: 1.4em;
   padding: 10px;
   margin: 5px;
