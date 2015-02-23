@@ -50,11 +50,6 @@ Submit
  */
 
 
-//App icon action
-var kopObject = {
-  total: 0
-};
-
 
 $(' textarea, input:not(.line-harga)').focus(function() {
   'use strict';
@@ -72,12 +67,13 @@ $(' textarea, input:not(.line-harga)').focus(function() {
       .removeClass('lightgreen');
   });
 
-
-$('.gender').on('click',function(){
-	$('#jenisKelami div:first').addClass('lightgreen')
-		$('.gender').on('blur',function(){
-			$('#jenisKelami div:first').removeClass('lightgreen')
-		});
+//function for gender input
+$('.gender').click(function() {
+  "use strict";
+  $('.gender').removeClass('lightgreen');
+  $(this).addClass('lightgreen');
+  $('.gender').val('');
+  $(this).val($(this).attr('placeholder'));
 });
 
 $('.line-harga').keyup(function() {
@@ -105,14 +101,10 @@ $('.line-harga').keyup(function() {
 
 });
 
-
-
 //TODO: prevent from opening more tabs
 chrome.browserAction.onClicked.addListener(function(callback) {
   "use strict";
   var action_url = chrome.extension.getURL("main.html");
   chrome.tabs.create({ url: action_url });
 });
-
-
 

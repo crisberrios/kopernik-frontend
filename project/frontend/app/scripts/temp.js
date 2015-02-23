@@ -64,8 +64,7 @@ $('#submit').click(function(){
 	    kioskNameNumber: $("#nama-telepon-input").val()
  	};
   
-  alert('HELLO');
-  alert(store.gender);
+  
   chrome.storage.local.set(store);
  
 });
