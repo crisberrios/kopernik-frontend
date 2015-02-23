@@ -10,17 +10,21 @@ $('#submit').click(function(){
   chrome.storage.local.set(store, function(){});
   */
  
+
+ 
  //button selection
  $('#jenisKelami-L , #jenisKelami-P').click(function(){
  	if(this.id == 'jenisKelami-L'){
- 		$('#jenisKelami-L').css('background-color','lightblue')
+ 		$('#jenisKelami-L').css('background-color','#CCCC66')
  		$('#jenisKelami-P').css('background-color','white')
- 		alert($('#jenisKelami-L').val());
- 	}else{
- 		$('#jenisKelami-P').css('background-color','lightblue')
+ 		$('.gender').attr("value","male");
+ 		alert($('button').val());
+   	}else{
+ 		$('#jenisKelami-P').css('background-color','#CCCC66')
  		$('#jenisKelami-L').css('background-color','white')
- 		alert($('#jenisKelami-P').val());
- 	}
+ 		$('.gender').attr("value","female");
+ 		alert($('button').val());
+	}
  })
 
 
@@ -60,6 +64,8 @@ $('#submit').click(function(){
 	    kioskNameNumber: $("#nama-telepon-input").val()
  	};
   
+  alert('HELLO');
+  alert(store.gender);
   chrome.storage.local.set(store);
  
 });
