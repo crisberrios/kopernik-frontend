@@ -149,17 +149,6 @@ body {
 	background-color: lightgreen;
 }
 
-.lightblue{
-	background-color: #bdeaf8;
-}
-
-.submit:hover{
-	-webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
-}
-
 .whiteBox {
   width: 95%;
   margin: 0 auto;
@@ -216,6 +205,7 @@ body {
 .row {
   display: block;
   width: 100%;
+  min-height: 20px;
 }
 
 input {
@@ -288,11 +278,16 @@ textarea {
 }
 
 .tan {
-  background: #C4B693;
+  background-color: #C4B693;
 }
 
 .white {
   background: #FFF;
+}
+.red {
+  background : #ffe2d9;
+  box-sizing: padding-box;
+  border: 1px solid red;
 }
 
 .white > p {
@@ -346,7 +341,11 @@ textarea {
 
 #nomorSeri {
   width: 250px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 10px 10px 0;
+  background: linear-gradient(to bottom, #413100,#413100 30px, #C4B693 65px, #C4B693 ) #C4B693;
+}
+.round {
+  border-radius: 10px;
 }
 
 #tanggal {
@@ -429,16 +428,22 @@ textarea {
   height: 105px;
 }
 
-button.submit {
-  color: #413100;
+.submit {
+  color: #eee;
   border: 2px solid #B2A176;
   padding: 18px 25px 18px 25px;
   font-size: 3.8em;
   border-radius: 10px;
-  background: #DACEB4;
+  background: #2149da;
   margin-top: 6px;
   margin-left: 9px;
+  opacity: 0.5;
+  display:none;
 }
+.submit:hover {
+  box-shadow: 1px 1px 1px 1px #333;
+}
+
 .indicator {
   width: 20px;
   height: 20px;

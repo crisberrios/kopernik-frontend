@@ -1,12 +1,11 @@
-// Called when the user clicks on the browser action.
 /*List of fields:
 KwitNumber:
   #kwitNumber-input: number
 Nama Lengcap:
   #nama-input : textarea
 Jenis Kelami:
-  #jenisKelami-P button
-  #jenisKelami-L button
+  #jenisKelami-P text input
+  #jenisKelami-L text input
 Nomor Telepon
   #nomor-telepon-input textarea
 Alamat
@@ -50,7 +49,7 @@ Submit
  */
 
 
-
+//checking of green boxes
 $(' textarea, input:not(.line-harga)').focus(function() {
   'use strict';
   $(this)
@@ -67,7 +66,7 @@ $(' textarea, input:not(.line-harga)').focus(function() {
       .removeClass('lightgreen');
   });
 
-//function for gender input
+//Gender input behaviour
 $('.gender').click(function() {
   "use strict";
   $('.gender').removeClass('lightgreen');
@@ -76,9 +75,9 @@ $('.gender').click(function() {
   $(this).val($(this).attr('placeholder'));
 });
 
+//Price inputs math behaviour
 $('.line-harga').keyup(function() {
   "use strict";
-  //harga-1-1-input
   var jumlah, hargaPerUnit, lineTotal=0;
   var subTotal = [];
   for(var i=1; i<=3 ;i++) {
@@ -96,15 +95,44 @@ $('.line-harga').keyup(function() {
   if(subTotal.length > 0) {
     $('#total-harga').val(subTotal.reduce(function(a,b) {
       return a+b;
-    }));
+    })).change();
   }
-
+});
+//submit hover animation
+$('.submit').hover(function(){
+  "use strict";
+  $(this).animate({
+    opacity: 1
+  },400);
+},function(){
+  "use strict";
+  $(this).animate({
+    opacity: 0.7
+  },400);
+});
+//Enable submit only on critical data filled in
+$('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
+  "use strict";
+  if(!$(this).val()) {
+    $(this).addClass("red");
+  } else {
+    $(this).removeClass("red");
+  }
+  if($('#nomor-seri-1-input').val() && $('#stempel-input').val() && $('#total-harga').val()) {
+    $('.submit').fadeIn();
+  } else {
+    $('.submit').fadeOut();
+  }
+}).keyup(function(){
+  "use strict";
+  $(this).change();
 });
 
+
 //TODO: prevent from opening more tabs
+//main icon action
 chrome.browserAction.onClicked.addListener(function(callback) {
   "use strict";
   var action_url = chrome.extension.getURL("main.html");
   chrome.tabs.create({ url: action_url });
 });
-
