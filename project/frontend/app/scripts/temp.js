@@ -1,7 +1,5 @@
-//Submit action
-
-/*
 $('#submit').click(function(){
+<<<<<<< HEAD
   "use strict";
   var key = "a";
   var value = "10";
@@ -27,12 +25,12 @@ $('#submit').click(function(){
 	}
  })
 
+=======
+>>>>>>> f80d8118651d3b04c9aa989c57bb5fc07d7636a8
 
-$('#submit').click(function(){
-	
 	"use strict";
-	
-	var store = {
+
+	var obj = {
 		kwitNumber: $("#kwitNumber-input").val(),
   		name: $("#nama-input").val(),
   		gender: $(".gender").val(),
@@ -63,9 +61,13 @@ $('#submit').click(function(){
 	    kioskID: $("#stempel-input").val(),
 	    kioskNameNumber: $("#nama-telepon-input").val()
  	};
+<<<<<<< HEAD
   
   
   chrome.storage.local.set(store);
  
+=======
+  kpn.store(JSON.stringify(obj));
+>>>>>>> f80d8118651d3b04c9aa989c57bb5fc07d7636a8
 });
 
