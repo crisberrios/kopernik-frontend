@@ -1,15 +1,3 @@
- //button selection
- $('#jenisKelami-L , #jenisKelami-P').click(function(){
- 	if(this.id == 'jenisKelami-L'){
- 		$('#jenisKelami-L').css('background-color','lightblue');
- 		$('#jenisKelami-P').css('background-color','white');
- 	}else{
- 		$('#jenisKelami-P').css('background-color','lightblue');
- 		$('#jenisKelami-L').css('background-color','white');
- 	}
- });
-
-
 $('#submit').click(function(){
 
 	"use strict";

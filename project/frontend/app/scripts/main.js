@@ -67,13 +67,13 @@ $(' textarea, input:not(.line-harga)').focus(function() {
       .removeClass('lightgreen');
   });
 
-
-$('.gender').on('click',function(){
+//function for gender input
+$('.gender').click(function() {
   "use strict";
-	$('#jenisKelami div:first').addClass('lightgreen');
-		$('.gender').on('blur',function(){
-			$('#jenisKelami div:first').removeClass('lightgreen');
-		});
+  $('.gender').removeClass('lightgreen');
+  $(this).addClass('lightgreen');
+  $('.gender').val('');
+  $(this).val($(this).attr('placeholder'));
 });
 
 $('.line-harga').keyup(function() {
