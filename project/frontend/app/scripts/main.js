@@ -50,11 +50,6 @@ Submit
  */
 
 
-//App icon action
-var kopObject = {
-  total: 0
-};
-
 
 $(' textarea, input:not(.line-harga)').focus(function() {
   'use strict';
@@ -74,9 +69,10 @@ $(' textarea, input:not(.line-harga)').focus(function() {
 
 
 $('.gender').on('click',function(){
-	$('#jenisKelami div:first').addClass('lightgreen')
+  "use strict";
+	$('#jenisKelami div:first').addClass('lightgreen');
 		$('.gender').on('blur',function(){
-			$('#jenisKelami div:first').removeClass('lightgreen')
+			$('#jenisKelami div:first').removeClass('lightgreen');
 		});
 });
 
@@ -88,7 +84,7 @@ $('.line-harga').keyup(function() {
   for(var i=1; i<=3 ;i++) {
     hargaPerUnit = parseInt($('#harga-'+i+'-1-input').val(),10);
     jumlah = parseInt($('#harga-'+i+'-2-input').val(),10);
-    if (Number.isInteger(hargaPerUnit) && Number.isInteger(jumlah)) {
+    if (isInteger(hargaPerUnit) && isInteger(jumlah)) {
       lineTotal = hargaPerUnit*jumlah;
       subTotal.push(lineTotal);
       $('#harga-'+i+'-3-input').val(lineTotal);
@@ -105,14 +101,10 @@ $('.line-harga').keyup(function() {
 
 });
 
-
-
 //TODO: prevent from opening more tabs
 chrome.browserAction.onClicked.addListener(function(callback) {
   "use strict";
   var action_url = chrome.extension.getURL("main.html");
   chrome.tabs.create({ url: action_url });
 });
-
-
 

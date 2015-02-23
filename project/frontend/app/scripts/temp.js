@@ -1,34 +1,20 @@
-//Submit action
-
-/*
-$('#submit').click(function(){
-  "use strict";
-  var key = "a";
-  var value = "10";
-  var store = {};
-  store[key]=value;
-  chrome.storage.local.set(store, function(){});
-  */
- 
  //button selection
  $('#jenisKelami-L , #jenisKelami-P').click(function(){
  	if(this.id == 'jenisKelami-L'){
- 		$('#jenisKelami-L').css('background-color','lightblue')
- 		$('#jenisKelami-P').css('background-color','white')
- 		alert($('#jenisKelami-L').val());
+ 		$('#jenisKelami-L').css('background-color','lightblue');
+ 		$('#jenisKelami-P').css('background-color','white');
  	}else{
- 		$('#jenisKelami-P').css('background-color','lightblue')
- 		$('#jenisKelami-L').css('background-color','white')
- 		alert($('#jenisKelami-P').val());
+ 		$('#jenisKelami-P').css('background-color','lightblue');
+ 		$('#jenisKelami-L').css('background-color','white');
  	}
- })
+ });
 
 
 $('#submit').click(function(){
-	
+
 	"use strict";
-	
-	var store = {
+
+	var obj = {
 		kwitNumber: $("#kwitNumber-input").val(),
   		name: $("#nama-input").val(),
   		gender: $(".gender").val(),
@@ -59,8 +45,6 @@ $('#submit').click(function(){
 	    kioskID: $("#stempel-input").val(),
 	    kioskNameNumber: $("#nama-telepon-input").val()
  	};
-  
-  chrome.storage.local.set(store);
- 
+  kpn.store(JSON.stringify(obj));
 });
 
