@@ -84,7 +84,7 @@ $('.line-harga').keyup(function() {
   for(var i=1; i<=3 ;i++) {
     hargaPerUnit = parseInt($('#harga-'+i+'-1-input').val(),10);
     jumlah = parseInt($('#harga-'+i+'-2-input').val(),10);
-    if (isInteger(hargaPerUnit) && isInteger(jumlah)) {
+    if (Number.isInteger(hargaPerUnit) && Number.isInteger(jumlah)) {
       lineTotal = hargaPerUnit*jumlah;
       subTotal.push(lineTotal);
       $('#harga-'+i+'-3-input').val(lineTotal);
