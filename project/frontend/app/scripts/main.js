@@ -50,7 +50,7 @@ Submit
 
 
 //checking of green boxes
-$(' textarea, input:not(.line-harga)').focus(function() {
+$(' textarea, input:not(.line-harga, #kwitNumber-input)').focus(function() {
   'use strict';
   $(this)
     .closest('.normal-box:not(.little-box), .block-fat')
@@ -128,6 +128,8 @@ $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
   'use strict';
   $(this).change();
 });
+
+//$('#kwitNumber-input').focus();
 
 
 //TODO: prevent from opening more tabs

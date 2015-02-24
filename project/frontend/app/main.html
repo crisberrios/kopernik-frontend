@@ -22,10 +22,10 @@
     <h1>KWITANSI</h1>
   </div>
   <div id="kwitNumber">
-    <input id="kwitNumber-input" type="number" class="left" size="10" placeholder="NO." tabindex="1" autofocus/>
+    <input id="kwitNumber-input" type="number" class="left" size="10" tabindex="1" placeholder="NO." autofocus/>
   </div>
   <div id="logo">
-   	<img src="images/kopernik-logo-global.png" />
+    <img src="images/kopernik-logo-global.png"/>
 
   </div>
   <div id="headText">
@@ -53,29 +53,23 @@
   <div class="row"> <!-- second row -->
     <div id="namaLengcap" class="normal-box">
       <h2>NAMA LENGCAP PELANGGAN</h2>
+
       <div class="smallBox"></div>
       <div class="whiteBox">
-        <textarea  maxlength ="50" rows="2" cols="25" required id="nama-input" tabindex="2"></textarea>
+        <textarea maxlength="50" rows="2" cols="25" required id="nama-input" tabindex="2"></textarea>
       </div>
     </div>
 
     <div class='connection'><i class="normal-connection"></i></div>
 
-	<div id='jenisKelami' class="normal-box">
-		<h2>JENIS KELAMIN</h2>
-	    <div class="smallBox"></div>
-		    <button type="button" class="gender" id="jenisKelami-L" tabindex="3">L</button>
-	        <button type="button" class="gender" id="jenisKelami-P"	tabindex="4">P</button>
-	</div>
-
-<!--
     <div id='jenisKelami' class="normal-box">
       <h2>JENIS KELAMIN</h2>
+
       <div class="smallBox"></div>
-      <input type="text" class="gender" id="jenisKelami-L" tabindex="3" placeholder="L" />
-      <input type="text" class="gender" id="jenisKelami-P"	tabindex="4" placeholder="P" />
+      <button type="button" class="gender" id="jenisKelami-L" tabindex="3">L</button>
+      <button type="button" class="gender" id="jenisKelami-P" tabindex="4">P</button>
     </div>
--->
+
     <div class="connection"><i class="normal-connection"></i></div>
 
     <div id="nomorTelepon" class="normal-box">
@@ -83,7 +77,7 @@
 
       <div class="smallBox"></div>
       <div class="whiteBox">
-        <textarea  maxlength ="40" rows="2" cols="26" required id="nomor-telepon-input" tabindex="5"></textarea>
+        <textarea maxlength="40" rows="2" cols="26" required id="nomor-telepon-input" tabindex="5"></textarea>
       </div>
     </div>
 
@@ -93,8 +87,10 @@
       <h2 class="center">ALAMAT</h2>
 
       <div class="smallBox"></div>
-      <input class="line" id="alamat-1-input" type="text" required tabindex="6" placeholder="JL.           RT/RW       DS./BR."/>
-      <input class="line" id="alamat-2-input" type="text" tabindex="7"  placeholder="DESA./KEL.       KEC      KOTA/KAB."/>
+      <input class="line" id="alamat-1-input" type="text" required tabindex="6"
+             placeholder="JL.           RT/RW       DS./BR."/>
+      <input class="line" id="alamat-2-input" type="text" tabindex="7"
+             placeholder="DESA./KEL.       KEC      KOTA/KAB."/>
     </div>
     <!-- end of second row -->
 
@@ -114,6 +110,7 @@
       </div>
       <div class="normal-box big-box tan" id="nomorSeri">
         <h2 class="center">NOMOR SERI</h2>
+
         <div class="smallBox"></div>
         <input type="text" class="line red" id="nomor-seri-1-input" required tabindex="8"/>
         <input type="text" class="line" id="nomor-seri-2-input" tabindex="9"/>
@@ -127,7 +124,7 @@
         </div>
       </div>
       <div class="normal-box little-box" id="tanggal">
-        <input type="date" class="line" id="tanggal-input" />
+        <input type="date" class="line" id="tanggal-input"/>
       </div>
     </div>
     <div class="connection"></div>
@@ -167,7 +164,7 @@
         <i class="sign"></i>
 
         <h2 class="harga-1">TOTAL HARGA</h2>
-        <input type="number" class="line harga-1 line-harga" id="harga-1-1-input" />
+        <input type="number" class="line harga-1 line-harga" id="harga-1-1-input"/>
         <i class="sign">X</i>
         <input type="number" class="line harga-2 line-harga" id="harga-1-2-input"/>
         <i class="sign">=</i>
@@ -193,7 +190,7 @@
           </div>
           <div class="row">
             <div class="normal-box white" id="namaPenjual">
-              <textarea maxlength ="65" rows="3" cols="22" required id="nama-telepon-input"></textarea>
+              <textarea maxlength="65" rows="3" cols="22" required id="nama-telepon-input"></textarea>
             </div>
           </div>
         </div>
@@ -242,12 +239,14 @@
     </div>
     <div class="row">
       <div class="normal-box white" id="pelanggan">
-        <button type="submit" class="submit disabled" id="submit" >KIRIM</button>
+        <button type="submit" class="submit disabled" id="submit">KIRIM</button>
       </div>
     </div>
   </div>
   <div id="feedback"><h2 class="feedback-header">TOTAL AMOUNT:</h2><span class="feedback-total-amount"></span>
+
     <h2 class="feedback-header">TOTAL FORMS SENT:</h2><span class="feedback-total-forms"></span>
+
     <div id="online" class="indicator"></div>
   </div>
 </div>
