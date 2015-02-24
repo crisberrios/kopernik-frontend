@@ -15,6 +15,17 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
 }
+/*clearfix */
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
 
 body {
   width: 100%;
@@ -32,7 +43,7 @@ input:focus{
 .container {
   width: 1170px; /* default width to support most popular tablets and laptops*/
   margin: 0 auto;
-  display: block;
+  display: table;
   position: relative;
   height: 500px;
 }
