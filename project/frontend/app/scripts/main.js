@@ -81,27 +81,35 @@ $('.line-harga').keyup(function() {
   'use strict';
   var jumlah, hargaPerUnit, lineTotal=0;
   var subTotal = [];
+  var hargaPerUnitInput;
   for(var i=1; i<=3 ;i++) {
-    hargaPerUnit = parseInt($('#harga-'+i+'-1-input').val(),10);
+    hargaPerUnitInput = $('#harga-'+i+'-1-input').val();
+    hargaPerUnit = parseInt(hargaPerUnitInput.replace(/[\D]/g,''),10);
     jumlah = parseInt($('#harga-'+i+'-2-input').val(),10) || 1;
     if (Number.isInteger(hargaPerUnit) && Number.isInteger(jumlah)) {
       lineTotal = hargaPerUnit*jumlah;
       subTotal.push(lineTotal);
       $('#harga-'+i+'-2-input').val(+$('#harga-'+i+'-2-input').val() || 1);
-      $('#harga-'+i+'-3-input').val(lineTotal);
+      $('#harga-'+i+'-3-input').val(lineTotal.toLocaleString('in'))
+        .removeClass('left')
+        .addClass('center');
       }
     else {
-      $('#harga-'+i+'-3-input').val('Rp.');
+      $('#harga-'+i+'-3-input').val(null)
+        .addClass('left')
+        .removeClass('center');
     }
   }
   if(subTotal.length > 0) {
-    $('#total-harga').val(subTotal.reduce(function(a,b) {
+    $('#total-harga')
+      .val(subTotal.reduce(function(a,b) {
       return a+b;
-    })).change();
+    }).toLocaleString('in'))
+      .change();
   }
 });
 //submit hover animation
-$('.submit').hover(function(){
+$('.enabled').hover(function(){
   'use strict';
   $(this).animate({
     opacity: 1
@@ -121,17 +129,26 @@ $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
     $(this).removeClass('red');
   }
   if($('#nomor-seri-1-input').val() && $('#stempel-input').val() && $('#total-harga').val()) {
-    $('.submit').addClass('enabled').removeClass('disabled');
+    $('.submit').addClass('enabled')
+      .removeClass('disabled');
   } else {
-    $('.submit').removeClass('enabled').addClass('disabled');
+    $('.submit').removeClass('enabled')
+      .addClass('disabled');
   }
 }).keyup(function(){
   'use strict';
   $(this).change();
 });
 
-//$('#kwitNumber-input').focus();
-
+$('#total-harga').change(function() {
+  'use strict';
+  if (!$(this).val()) {
+    $(this).addClass('left').removeClass('center').change();
+  }
+  else {
+    $(this).addClass('center').removeClass('left').change();
+  }
+});
 
 //TODO: prevent from opening more tabs
 //main icon action
@@ -139,4 +156,19 @@ chrome.browserAction.onClicked.addListener(function() {
   'use strict';
   var actionUrl = chrome.extension.getURL('main.html');
   chrome.tabs.create({ url: actionUrl });
+});
+
+$('.submit').mouseenter(function( ) {
+  'use strict';
+  if($(this).hasClass('disabled')) {
+    $(this).hide();
+    $('.missing').show();
+  }
+});
+$('.missing').mouseleave(function() {
+  'use strict';
+  $(this).hide(0,function() {
+    $('.submit').show();
+  });
+
 });

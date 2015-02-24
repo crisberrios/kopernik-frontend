@@ -536,3 +536,20 @@ p.stempel-text{
   display: inline-block;
 
 }
+.missing {
+  display: block;
+  width: 155px;
+  height: 75px;
+  border-radius: 10px;
+  margin-top: 4px;
+  margin-left: 10px;
+  padding: 10px;
+  color: #FF9900;
+  font-size: 1em;
+}
+.missing p {
+  padding-top: 4px;
+}
+.hidden {
+  display:none;
+}

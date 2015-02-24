@@ -164,21 +164,21 @@
         <i class="sign"></i>
 
         <h2 class="harga-1">TOTAL HARGA</h2>
-        <input type="number" class="line harga-1 line-harga" id="harga-1-1-input"/>
+        <input type="text" class="line harga-1 line-harga" id="harga-1-1-input"/>
         <i class="sign">X</i>
-        <input type="number" class="line harga-2 line-harga" id="harga-1-2-input"/>
+        <input type="text" class="line harga-2 line-harga" id="harga-1-2-input"/>
         <i class="sign">=</i>
-        <input type="number" class="line harga-1 line-harga left" placeholder="Rp." id="harga-1-3-input"/>
-        <input type="number" class="line harga-1 line-harga" id="harga-2-1-input"/>
+        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-1-3-input"/>
+        <input type="text" class="line harga-1 line-harga" id="harga-2-1-input"/>
         <i class="sign">X</i>
-        <input type="number" class="line harga-2 line-harga" id="harga-2-2-input"/>
+        <input type="text" class="line harga-2 line-harga" id="harga-2-2-input"/>
         <i class="sign">=</i>
-        <input type="number" class="line harga-1 line-harga left" placeholder="Rp." id="harga-2-3-input"/>
-        <input type="number" class="line harga-1 line-harga" id="harga-3-1-input"/>
+        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-2-3-input"/>
+        <input type="text" class="line harga-1 line-harga" id="harga-3-1-input"/>
         <i class="sign">X</i>
-        <input type="number" class="line harga-2 line-harga" id="harga-3-2-input"/>
+        <input type="text" class="line harga-2 line-harga" id="harga-3-2-input"/>
         <i class="sign">=</i>
-        <input type="number" class="line harga-1 line-harga left" placeholder="Rp." id="harga-3-3-input"/>
+        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-3-3-input"/>
 
         <div class="harga-pad"></div>
         <div class="connection pad-connection">
@@ -205,7 +205,7 @@
           </div>
           <div class="row">
             <div class="normal-box little-box" id="totalHarga">
-              <input type="number" class="line left red" id="total-harga" placeholder="Rp."/>
+              <input type="text" class="line left red" id="total-harga" placeholder="Rp."/>
             </div>
           </div>
         </div>
@@ -226,10 +226,10 @@
     </div>
     <div class="row">
       <div class="normal-box tan" id="cicil">
-        <input type="number" class="line left" id="cicil-1" placeholder="Rp."/>
-        <input type="number" class="line left" id="cicil-2" placeholder="Rp."/>
-        <input type="number" class="line left" id="cicil-3" placeholder="Rp."/>
-        <input type="number" class="line left" id="cicil-4" placeholder="Rp."/>
+        <input type="text" class="line left" id="cicil-1" placeholder="Rp."/>
+        <input type="text" class="line left" id="cicil-2" placeholder="Rp."/>
+        <input type="text" class="line left" id="cicil-3" placeholder="Rp."/>
+        <input type="text" class="line left" id="cicil-4" placeholder="Rp."/>
       </div>
     </div>
     <div class="row">
@@ -240,6 +240,10 @@
     <div class="row">
       <div class="normal-box white" id="pelanggan">
         <button type="submit" class="submit disabled" id="submit">KIRIM</button>
+        <div class="missing red hidden"><h3>CHECK INPUT FIELDS:</h3>
+          <p>NOMOR SERI</p>
+        <p>STEMPEL TA/TR</p>
+        <p>TOTAL HARGA PESANN</p></div>
       </div>
     </div>
   </div>

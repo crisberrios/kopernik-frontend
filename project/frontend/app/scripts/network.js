@@ -1,5 +1,6 @@
 var kpn = {
   status: 'offline',
+  apiKey: '01020304050607090A0B0C0D0E0F',
   pingServer: 'http://localhost:3000/ping',
   dataServer: 'http://localhost:3000/data',
   lock: false
@@ -109,7 +110,7 @@ kpn.addTotal = function addTotal(amount) {
 kpn.updateTotal = function updateTotal(){
   'use strict';
   chrome.storage.local.get(['totalAmount','totalForms'],function(data) {
-  console.log("data:"+JSON.stringify(data));
+  console.log('data:'+JSON.stringify(data));
     var totalAmount = data.totalAmount || 0;
     var totalForms = data.totalForms || 0;
     $('.feedback-total-amount').text(totalAmount);
