@@ -22,10 +22,16 @@ body {
   color: #333;
   font-family: "proxima_nova_rgregular","Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
+/* Visual aid for input fields*/
+input:focus{
+  box-shadow: inset 0 0 5px 1px #ffb500;
+}
 
 .container {
   width: 1170px; /* default width to support most popular tablets and laptops*/
   margin: 0 auto;
+  height: 100vh;
+  position: relative;
 }
 
 #kwit, #kwitNumber, #headText, #logo {
@@ -62,7 +68,7 @@ body {
 
 #kwitNumber > input {
   height: 30px;
-  background: #E9E2D2;
+  background: #fffaf7;
   border-radius: 10px;
   font-size: 1.8em;
   color: #8B7741;
@@ -240,7 +246,7 @@ textarea {
   position: relative;
   border-radius: 5px 5px 0 0;
   background: #413100;
-  padding: 2px 5px 0px 5px;
+  padding: 2px 5px 0 5px;
   display: inline-block;
   margin-left: 15px;
   margin-top: 3px;
@@ -282,9 +288,9 @@ textarea {
   background: #FFF;
 }
 .red {
-  background : #fff0ed;
+  background : #f8ff91;
   box-sizing: padding-box;
-  border: 1px solid red;
+  border: 1px solid #ff9900;
 }
 
 .white > p {
@@ -294,10 +300,10 @@ textarea {
 /*Second row of input form */
 #namaLengcap {
   width: 280px;
+  overflow: hidden;
 }
 #namaLengcap textarea {
-  font-size: 1.27em;
-  width: 50px;
+  font-size: 1.4em;
 }
 
 #jenisKelami {
@@ -320,8 +326,8 @@ textarea {
 }
 */
 
-#jenisKelami button{
-	background: white;
+.gender{
+   background: white;
     color: #E9E2D2;
     height: 70px;
 	width: 72px;
@@ -374,15 +380,18 @@ textarea {
   width: 245px;
 }
 p.stempel-text{
+  width: 90%;
   font-size: 2em;
   color: #cd564a;
+  text-align: center;
   font-weight: bold;
-  padding-left: 30px;
-  padding-top: 2px;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 #stempel input {
   color: #a90000;
   font-weight: bold;
+  font-size: 2em;
 }
 #namaPenjual textarea {
   font-size: 1.3em;
@@ -458,27 +467,52 @@ p.stempel-text{
 
 .submit {
   color: #eee;
-  border: 2px solid #B2A176;
+  border: 1px solid #B2A176;
   padding: 16px 25px 15px 25px;
   font-size: 3.8em;
   border-radius: 10px;
-  background: #2149da;
   margin-top: 4px;
   margin-left: 10px;
-  opacity: 0.5;
-  display:none;
+  opacity: 0.9;
+}
+.disabled {
+  background-color: #dcd7d2;
+}
+.enabled {
+  background: linear-gradient(to bottom, #ff9900, #eb8500 50%, #d97700);
 }
 .submit:hover {
   box-shadow: 1px 1px 1px 1px #333;
 }
 
 .indicator {
-  width: 20px;
-  height: 20px;
-  position: fixed;
-  bottom: 5px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 6px;
   right: 5px;
   background: lightgray;
   border: 1px solid white;
-  border-radius: 50%;
+  border-radius: 5px;
+}
+.genderback {
+  background-color: #ff9900;
+}
+#feedback {
+  height: 40px;
+  width:  100%;
+  background: #B2A176;
+  border: 2px solid white;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  bottom: 2px;
+
+}
+.feedback-header, .feedback-total-amount, .feedback-total-forms {
+  color: white;
+  font-size: 1.5em;
+  padding: 9px 0 0 10px;
+  display: inline-block;
+
 }

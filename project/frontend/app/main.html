@@ -22,11 +22,11 @@
     <h1>KWITANSI</h1>
   </div>
   <div id="kwitNumber">
-    <input id="kwitNumber-input" type="number" class="left" size="10" placeholder="NO." pattern="[0-9]{1,10}" tabindex="2"/>
+    <input id="kwitNumber-input" type="number" class="left" size="10" placeholder="NO." tabindex="1" autofocus/>
   </div>
   <div id="logo">
    	<img src="images/kopernik-logo-global.png" />
-    
+
   </div>
   <div id="headText">
     <p><a href="http://www.kopernik.info">www.kopernik.info</a> - <a href="mailto:kopernik@kopernik.info">kopernik@kopernik.info</a>
@@ -55,7 +55,7 @@
       <h2>NAMA LENGCAP PELANGGAN</h2>
       <div class="smallBox"></div>
       <div class="whiteBox">
-        <textarea  maxlength ="50" rows="2" cols="30" required id="nama-input" tabindex="2"></textarea>
+        <textarea  maxlength ="50" rows="2" cols="25" required id="nama-input" tabindex="2"></textarea>
       </div>
     </div>
 
@@ -140,8 +140,7 @@
       <div class="row">
         <div class="normal-box white" id="stempel">
           <p class="stempel-text">>>KOPERNIK</p>
-          <input class="red line" required id="stempel-input" placeholder="TK-0082- KIOS INA"/>
-          <p class="stempel-text">0123456789012</p>
+          <input class="red line" required id="stempel-input" placeholder="TK-XXXXX"/>
         </div>
       </div>
     </div>
@@ -243,12 +242,16 @@
     </div>
     <div class="row">
       <div class="normal-box white" id="pelanggan">
-        <button type="submit" class="submit" id="submit" >KIRIM</button>
+        <button type="submit" class="submit disabled" id="submit" >KIRIM</button>
       </div>
     </div>
   </div>
+  <div id="feedback"><h2 class="feedback-header">TOTAL AMOUNT:</h2><span class="feedback-total-amount"></span>
+    <h2 class="feedback-header">TOTAL FORMS SENT:</h2><span class="feedback-total-forms"></span>
+    <div id="online" class="indicator"></div>
+  </div>
 </div>
-<div id="online" class="indicator"></div>
+
 <script src="scripts/jquery-1.11.2.min.js"></script>
 <script src="scripts/main.js"></script>
 <script src="scripts/network.js"></script>

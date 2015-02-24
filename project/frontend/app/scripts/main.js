@@ -108,7 +108,7 @@ $('.submit').hover(function(){
 },function(){
   'use strict';
   $(this).animate({
-    opacity: 0.7
+    opacity: 0.9
   },400);
 });
 //Enable submit only on critical data filled in
@@ -120,9 +120,9 @@ $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
     $(this).removeClass('red');
   }
   if($('#nomor-seri-1-input').val() && $('#stempel-input').val() && $('#total-harga').val()) {
-    $('.submit').fadeIn();
+    $('.submit').addClass('enabled').removeClass('disabled');
   } else {
-    $('.submit').fadeOut();
+    $('.submit').removeClass('enabled').addClass('disabled');
   }
 }).keyup(function(){
   'use strict';

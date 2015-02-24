@@ -2,13 +2,13 @@
  $('#jenisKelami-L , #jenisKelami-P').click(function(){
    'use strict';
  	if(this.id === 'jenisKelami-L'){
- 		$('#jenisKelami-L').css('background-color','#CCCC66');
- 		$('#jenisKelami-P').css('background-color','white');
+ 		$('#jenisKelami-L').addClass('genderback');
+ 		$('#jenisKelami-P').removeClass('genderback');
  		$('.gender').attr('value','male');
  		//alert($('button').val());
    	}else{
- 		$('#jenisKelami-P').css('background-color','#CCCC66');
- 		$('#jenisKelami-L').css('background-color','white');
+ 		$('#jenisKelami-P').addClass('genderback');
+ 		$('#jenisKelami-L').removeClass('genderback');
  		$('.gender').attr('value','female');
  		//alert($('button').val());
 	}

@@ -47,6 +47,7 @@ kpn.sendItems = function sendItems(arr) {
 
 kpn.init = function init(nameSpace) {
   'use strict';
+  this.updateTotal();
   nameSpace = nameSpace || this.nameSpace;
   this.nameSpace = this.nameSpace || nameSpace;
   var initObj = {};
@@ -65,6 +66,7 @@ kpn.start = function start(interval) {
   var context = this;
   setInterval(function () {
     context.checkOnline();
+    context.updateTotal();
   }, interval);
 };
 kpn.store = function store(obj) {
@@ -93,14 +95,25 @@ kpn.clearStorage = function clearStorage() {
 };
 kpn.addTotal = function addTotal(amount) {
   'use strict';
-  console.log("total:"+amount);
+  var context = this;
   var num = Number.parseInt(amount.replace(/[^\d]/g,''));
   chrome.storage.local.get(['totalAmount','totalForms'],function(data){
     data.totalAmount= +data.totalAmount + num;
     data.totalForms = +data.totalForms + 1;
     chrome.storage.local.set(data,function() {
+      context.updateTotal();
       return true;
     });
+  });
+};
+kpn.updateTotal = function updateTotal(){
+  'use strict';
+  chrome.storage.local.get(['totalAmount','totalForms'],function(data) {
+  console.log("data:"+JSON.stringify(data));
+    var totalAmount = data.totalAmount || 0;
+    var totalForms = data.totalForms || 0;
+    $('.feedback-total-amount').text(totalAmount);
+  $('.feedback-total-forms').text(totalForms);
   });
 };
 
@@ -112,4 +125,4 @@ $(document).on('online',function() {
 //let's init the storage
 kpn.init('Kopernik');
 //let's start checking for online status
-kpn.start(15000);
+kpn.start(10000);
