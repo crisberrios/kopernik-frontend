@@ -51,6 +51,8 @@ kpn.init = function init(nameSpace) {
   this.nameSpace = this.nameSpace || nameSpace;
   var initObj = {};
   initObj[nameSpace] = [];
+  initObj.totalAmount = 0;
+  initObj.totalForms = 0;
   chrome.storage.local.get(nameSpace,function(obj) {
     if(Object.keys(obj).indexOf(nameSpace) <0) {
       console.log (nameSpace+' not found, initializing');
@@ -78,14 +80,28 @@ kpn.store = function store(obj) {
      tmp.push(obj);
      storageObj[nameSpace] = tmp;
        chrome.storage.local.set(storageObj, function() {
-      context.lock = false;
+         context.addTotal(obj.saleTotal);
+         context.lock = false;
     });
   });
 };
 kpn.clearStorage = function clearStorage() {
   'use strict';
-  chrome.storage.local.clear();
-  this.init();
+  var obj = {};
+  obj[this.nameSpace] = [];
+  chrome.storage.local.set(obj,function() {});
+};
+kpn.addTotal = function addTotal(amount) {
+  'use strict';
+  console.log("total:"+amount);
+  var num = Number.parseInt(amount.replace(/[^\d]/g,''));
+  chrome.storage.local.get(['totalAmount','totalForms'],function(data){
+    data.totalAmount= +data.totalAmount + num;
+    data.totalForms = +data.totalForms + 1;
+    chrome.storage.local.set(data,function() {
+      return true;
+    });
+  });
 };
 
 //handler for online status
@@ -96,4 +112,4 @@ $(document).on('online',function() {
 //let's init the storage
 kpn.init('Kopernik');
 //let's start checking for online status
-kpn.start(10000);
+kpn.start(15000);

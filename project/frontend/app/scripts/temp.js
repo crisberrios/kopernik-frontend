@@ -49,6 +49,6 @@ $('#submit').click(function(){
     kioskNameNumber: $('#nama-telepon-input').val()
   };
 
-  kpn.store(JSON.stringify(obj));
+  kpn.store(obj);
 });
 
