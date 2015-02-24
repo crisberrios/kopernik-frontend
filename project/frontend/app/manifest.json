@@ -2,19 +2,19 @@
   // Required
   "manifest_version": 2,
   "name": "Kopernik's Wonder Woman Initiative",
-  "version": "0.0.1",
+  "version": "0.0.2",
 
   // Recommended
   "description": "This extension is intended to enable offline data capture in remote regions of Indonesia with online sync.",
   "icons": { "16": "/favicon.ico",
-    "48": "/favicon.ico",
-    "128": "/favicon.ico" },
+    "48": "/images/kopernik-icon-48x48.png",
+    "128": "/images/kopernik-icon-128x128.png" },
 
   // Pick one (or none)
   "browser_action": {
     "default_icon": {                    // optional
-      "19": "/favicon.ico",           // optional Must be PNG
-      "38": "/favicon.ico"            // optional Must be PNG
+      "19": "/images/kopernik-icon-19x19.png",           // optional Must be PNG
+      "38": "/images/kopernik-icon-38x38.png"            // optional Must be PNG
       //Badge: Set the text and color of the badge using browserAction.setBadgeText and browserAction.setBadgeBackgroundColor,
     },
     "default_title": "Kopernik"
