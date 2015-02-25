@@ -1,8 +1,6 @@
 /**
  * Created by cristian on 24/02/15.
  */
-var kpn={};
-
 kpn.store = function store(obj) {
   'use strict';
   var context = this;

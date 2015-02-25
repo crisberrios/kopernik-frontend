@@ -47,8 +47,6 @@ Cicil
 Submit
  #submit
  */
-
-
 //checking of green boxes
 $(' textarea, input:not(.line-harga, #kwitNumber-input)').focus(function() {
   'use strict';
@@ -86,14 +84,16 @@ $('.line-harga').keyup(function() {
     hargaPerUnitInput = $('#harga-'+i+'-1-input').val();
     hargaPerUnit = parseInt(hargaPerUnitInput.replace(/[\D]/g,''),10);
     jumlah = parseInt($('#harga-'+i+'-2-input').val(),10) || 1;
-    if (Number.isInteger(hargaPerUnit) && Number.isInteger(jumlah)) {
+    if (Number.isInteger(hargaPerUnit)) {
       lineTotal = hargaPerUnit*jumlah;
       subTotal.push(lineTotal);
-      $('#harga-'+i+'-2-input').val(+$('#harga-'+i+'-2-input').val() || 1);
+      if($(this).hasClass('harga-1')) {
+        $('#harga-' + i + '-2-input').val(+$('#harga-' + i + '-2-input').val() || 1);
+      }
       $('#harga-'+i+'-3-input').val(lineTotal.toLocaleString('in'))
         .removeClass('left')
         .addClass('center');
-      }
+    }
     else {
       $('#harga-'+i+'-3-input').val(null)
         .addClass('left')
@@ -103,8 +103,8 @@ $('.line-harga').keyup(function() {
   if(subTotal.length > 0) {
     $('#total-harga')
       .val(subTotal.reduce(function(a,b) {
-      return a+b;
-    }).toLocaleString('in'))
+        return a+b;
+      }).toLocaleString('in'))
       .change();
   }
 });
@@ -123,12 +123,17 @@ $('.enabled').hover(function(){
 //Enable submit only on critical data filled in
 $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
   'use strict';
+  var agentMatch = /[a-zA-Z]{2}.?[\d]{4,5}$/;
   if(!$(this).val()) {
     $(this).addClass('red');
-  } else {
+  } else{
     $(this).removeClass('red');
   }
-  if($('#nomor-seri-1-input').val() && $('#stempel-input').val() && $('#total-harga').val()) {
+  if($(this).attr('id') === 'stempel-input' && !agentMatch.test($(this).val())) {
+    $(this).addClass('red');
+  }
+
+  if($('#nomor-seri-1-input').val() && agentMatch.test($('#stempel-input').val()) && $('#total-harga').val()) {
     $('.submit').addClass('enabled')
       .removeClass('disabled');
   } else {
@@ -143,10 +148,10 @@ $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
 $('#total-harga').change(function() {
   'use strict';
   if (!$(this).val()) {
-    $(this).addClass('left').removeClass('center').change();
+    $(this).addClass('left').removeClass('center');
   }
   else {
-    $(this).addClass('center').removeClass('left').change();
+    $(this).addClass('center').removeClass('left');
   }
 });
 

@@ -1,11 +1,3 @@
-var kpn = {
-  status: 'offline',
-  apiKey: '01020304050607090A0B0C0D0E0F',
-  pingServer: 'http://localhost:3000/ping',
-  dataServer: 'http://localhost:3000/data',
-  tab: false
-};
-
 kpn.checkOnline = function checkOnline() {
   'use strict';
   $.get(this.pingServer)

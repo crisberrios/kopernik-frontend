@@ -23,12 +23,13 @@
   // Optional
   "author": "FCC",
   "background": {
-    "scripts": ["scripts/jquery-1.11.2.min.js","scripts/background.js"]
+    "scripts": ["scripts/jquery-1.11.2.min.js","scripts/settings.js","scripts/background.js"]
   },
   "web_accessible_resources": [
     "scripts/main.js",
     "scripts/jquery-1.11.2.min.js",
-    "scripts/storage.js"
+    "scripts/storage.js",
+    "scripts/settings.js"
   ],
   "offline_enabled": true,
   "content_security_policy": "script-src 'self' http://localhost:8080; object-src 'self'",
