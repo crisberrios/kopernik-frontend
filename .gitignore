@@ -5,5 +5,5 @@ node_modules
 .idea
 
 project/backend/npm-debug.log
-project/frontend/dist.pem
-project/frontend/dist.crx
+frontend/dist.pem
+frontend/dist.crx

@@ -5,7 +5,7 @@
       <option name="frameworkVersion" value="1.2." />
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/project/frontend/app/scripts/jquery-1.11.2.min.js" />
+      <root url="file://$PROJECT_DIR$/frontend/app/scripts/jquery-1.11.2.min.js" />
     </CLASSES>
     <SOURCES />
   </library>
