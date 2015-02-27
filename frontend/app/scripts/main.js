@@ -186,6 +186,34 @@ $('#jenisKelami-L , #jenisKelami-P').click(function(){
   }
 });
 
+//populate dropdown menu
+$('.styled-select').one('focus',function(){
+	
+	var option1 = $('<option></option>').attr('value','1').append(' ');
+	var option2 = $('<option></option>').attr('value','2').append('Nazava Kecil');
+	var option3 = $('<option></option>').attr('value','3').append('Nazava 1');
+	var option4 = $('<option></option>').attr('value','4').append('Nazava XL');
+	var option5 = $('<option></option>').attr('value','5').append('Kompor Standard');
+	var option6 = $('<option></option>').attr('value','6').append('Kompor Jumbo');
+	var option7 = $('<option></option>').attr('value','7').append('Bright Box');
+	var option8 = $('<option></option>').attr('value','8').append('S20 d.light S20');
+	var option9 = $('<option></option>').attr('value','9').append('S300 d.light S300');
+	var option10 = $('<option></option>').attr('value','10').append('Bright Bulb');
+	var option11 = $('<option></option>').attr('value','11').append('Permanet');
+	var option12 = $('<option></option>').attr('value','12').append('Keran Air');
+	var option13 = $('<option></option>').attr('value','13').append('Batu Filter');
+	var option14 = $('<option></option>').attr('value','14').append('Tak Tertulis');
+	
+	if(this.id === '#produk-1-input'){
+	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
+	}else if(this.id === '#produk-2-input'){
+	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
+	}else{
+	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
+	}
+});
+
+//submit button
 $('#submit').click(function(){
   'use strict';
 
