@@ -379,6 +379,35 @@ textarea {
   border-radius: 10px 0 0 10px;
 }
 
+#produk-1-input, #produk-2-input{
+	
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 94%;
+ 	margin: 2px 3% 2px 3%;
+ 	border-radius: 5px;
+ 	font-size: 1.6em;
+    padding: 2px;
+    color: #333;
+    text-align: center;
+    border: 0;
+    outline: none;
+}
+
+#produk-3-input{
+	width: 94%;
+ 	margin: 2px 3% 2px 3%;
+ 	border-radius: 5px;
+ 	font-size: 1.6em;
+    padding: 2px;
+    color: #333;
+    text-align: center;
+    border: 0;
+    outline: none;
+}
+
+
 #nomorSeri {
   width: 250px;
   border-radius: 10px 10px 10px 0;
