@@ -141,6 +141,9 @@ $('.required').change(function(){
     $('.submit').removeClass('enabled')
       .addClass('disabled');
   }
+}).keyup(function() {
+  "use strict";
+  $(this).change();
 });
 
 $('#total-harga').change(function() {
