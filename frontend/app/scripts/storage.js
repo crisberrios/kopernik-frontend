@@ -1,7 +1,7 @@
 /**
  * Created by cristian on 24/02/15.
  */
-kpn.store = function store(obj) {
+kpn.store = function store(obj,callback) {
   'use strict';
   var context = this;
   var nameSpace = this.nameSpace;
@@ -13,6 +13,7 @@ kpn.store = function store(obj) {
     storageObj[nameSpace] = tmp;
     chrome.storage.local.set(storageObj, function() {
       context.addTotal(obj.saleTotal);
+      callback();
     });
   });
 };

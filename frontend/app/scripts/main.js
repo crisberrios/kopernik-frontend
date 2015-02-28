@@ -122,7 +122,7 @@ $('.enabled').hover(function(){
 });
 
 //Enable submit only on critical data filled in
-$('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
+$('.required').change(function(){
   'use strict';
   var agentMatch = /[a-zA-Z]{2}.?[\d]{4,5}$/;
   if(!$(this).val()) {
@@ -141,18 +141,20 @@ $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
     $('.submit').removeClass('enabled')
       .addClass('disabled');
   }
-}).keyup(function(){
-  'use strict';
-  $(this).change();
 });
 
 $('#total-harga').change(function() {
   'use strict';
+  var amount = Number.parseInt($(this).val().replace(/[\D]/g,''));
   if (!$(this).val()) {
     $(this).addClass('left').removeClass('center');
   }
   else {
     $(this).addClass('center').removeClass('left');
+    if(Number.isInteger(amount)) {
+      $(this).val(amount.toLocaleString('in'));
+    }
+
   }
 });
 
@@ -188,8 +190,8 @@ $('#jenisKelami-L , #jenisKelami-P').click(function(){
 });
 
 //populate dropdown menu
-$('.styled-select').one('focus',function(){
-	
+$('.produk-input').one('focus',function(){
+	'use strict';
 	var option1 = $('<option></option>').attr('value','').append(' ');
 	var option2 = $('<option></option>').attr('value','NAZK').append('Nazava Kecil');
 	var option3 = $('<option></option>').attr('value','NAZ1').append('Nazava 1');
@@ -204,18 +206,11 @@ $('.styled-select').one('focus',function(){
 	var option12 = $('<option></option>').attr('value','KERAN').append('Keran Air');
 	var option13 = $('<option></option>').attr('value','FILTER').append('Batu Filter');
 	var option14 = $('<option></option>').attr('value','UNSPECIFIED').append('Tak Tertulis');
-	
-	if(this.id === '#produk-1-input'){
 	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
-	}else if(this.id === '#produk-2-input'){
-	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
-	}else{
-	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
-	}
 });
 
 //submit button
-$('#submit').click(function(){
+$('#submit .enabled').click(function(){
   'use strict';
 
   var obj = {
@@ -250,34 +245,11 @@ $('#submit').click(function(){
     kioskNameNumber: $('#nama-telepon-input').val()
   };
 
-  kpn.store(obj);
-   /*
-   //clear form when submit is clicked
-   $('input, textarea').val(null);
-   $('#kwitNumber-input').val(null);
-   $('#produk-1-input').val(null);
-   $('#produk-2-input').val(null);
-   $('#produk-3-input').val(null);
-   $('#tanggal-input').val(null);
-   //$('#stempel-input').val(null;
-   $('.gender').attr('value','');
-   $('.submit').removeClass('enabled')
-   $('.gender').removeClass('genderback');
-	*/
+  kpn.store(obj, function() {
+    $('#kopernik-form').reset();
+  });
+
 });
 
 kpn.updateTotal();
 
-$('#submit').click(function(){
-	//clear form when submit is clicked
-   $('input, textarea').val(null);
-   $('#kwitNumber-input').val(null);
-   $('#produk-1-input').val(null);
-   $('#produk-2-input').val(null);
-   $('#produk-3-input').val(null);
-   $('#tanggal-input').val(null);
-   $('#stempel-input').val(null);
-   $('.gender').attr('value','');
-   $('.submit').removeClass('enabled')
-   $('.gender').removeClass('genderback');
-});
