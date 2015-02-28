@@ -120,6 +120,7 @@ $('.enabled').hover(function(){
     opacity: 0.9
   },400);
 });
+
 //Enable submit only on critical data filled in
 $('#nomor-seri-1-input, #stempel-input, #total-harga').change(function(){
   'use strict';
@@ -189,20 +190,20 @@ $('#jenisKelami-L , #jenisKelami-P').click(function(){
 //populate dropdown menu
 $('.styled-select').one('focus',function(){
 	
-	var option1 = $('<option></option>').attr('value','1').append(' ');
-	var option2 = $('<option></option>').attr('value','2').append('Nazava Kecil');
-	var option3 = $('<option></option>').attr('value','3').append('Nazava 1');
-	var option4 = $('<option></option>').attr('value','4').append('Nazava XL');
-	var option5 = $('<option></option>').attr('value','5').append('Kompor Standard');
-	var option6 = $('<option></option>').attr('value','6').append('Kompor Jumbo');
-	var option7 = $('<option></option>').attr('value','7').append('Bright Box');
-	var option8 = $('<option></option>').attr('value','8').append('S20 d.light S20');
-	var option9 = $('<option></option>').attr('value','9').append('S300 d.light S300');
-	var option10 = $('<option></option>').attr('value','10').append('Bright Bulb');
-	var option11 = $('<option></option>').attr('value','11').append('Permanet');
-	var option12 = $('<option></option>').attr('value','12').append('Keran Air');
-	var option13 = $('<option></option>').attr('value','13').append('Batu Filter');
-	var option14 = $('<option></option>').attr('value','14').append('Tak Tertulis');
+	var option1 = $('<option></option>').attr('value','').append(' ');
+	var option2 = $('<option></option>').attr('value','NAZK').append('Nazava Kecil');
+	var option3 = $('<option></option>').attr('value','NAZ1').append('Nazava 1');
+	var option4 = $('<option></option>').attr('value','NAZXL').append('Nazava XL');
+	var option5 = $('<option></option>').attr('value','UBS').append('Kompor Standard');
+	var option6 = $('<option></option>').attr('value','UBJ').append('Kompor Jumbo');
+	var option7 = $('<option></option>').attr('value','BBOX').append('Bright Box');
+	var option8 = $('<option></option>').attr('value','S20').append('S20 d.light S20');
+	var option9 = $('<option></option>').attr('value','S300').append('S300 d.light S300');
+	var option10 = $('<option></option>').attr('value','BBULB').append('Bright Bulb');
+	var option11 = $('<option></option>').attr('value','PERM').append('Permanet');
+	var option12 = $('<option></option>').attr('value','KERAN').append('Keran Air');
+	var option13 = $('<option></option>').attr('value','FILTER').append('Batu Filter');
+	var option14 = $('<option></option>').attr('value','UNSPECIFIED').append('Tak Tertulis');
 	
 	if(this.id === '#produk-1-input'){
 	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
@@ -250,6 +251,33 @@ $('#submit').click(function(){
   };
 
   kpn.store(obj);
+   /*
+   //clear form when submit is clicked
+   $('input, textarea').val(null);
+   $('#kwitNumber-input').val(null);
+   $('#produk-1-input').val(null);
+   $('#produk-2-input').val(null);
+   $('#produk-3-input').val(null);
+   $('#tanggal-input').val(null);
+   //$('#stempel-input').val(null;
+   $('.gender').attr('value','');
+   $('.submit').removeClass('enabled')
+   $('.gender').removeClass('genderback');
+	*/
 });
 
 kpn.updateTotal();
+
+$('#submit').click(function(){
+	//clear form when submit is clicked
+   $('input, textarea').val(null);
+   $('#kwitNumber-input').val(null);
+   $('#produk-1-input').val(null);
+   $('#produk-2-input').val(null);
+   $('#produk-3-input').val(null);
+   $('#tanggal-input').val(null);
+   $('#stempel-input').val(null);
+   $('.gender').attr('value','');
+   $('.submit').removeClass('enabled')
+   $('.gender').removeClass('genderback');
+});
