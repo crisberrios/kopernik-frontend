@@ -7,7 +7,7 @@ kpn.store = function store(obj) {
   var nameSpace = this.nameSpace;
   var storageObj = {};
   chrome.storage.local.get(nameSpace,function(arr) {
-    console.log('arr:' + JSON.stringify(arr));
+    console.log(JSON.stringify(arr,null,'\t'));
     var tmp = arr[nameSpace];
     tmp.push(obj);
     storageObj[nameSpace] = tmp;

@@ -223,7 +223,7 @@ input:focus{
 
 .row {
   position:relative;
-  display: block;
+  display: table;
   width: 100%;
   min-height: 20px;
 }
@@ -362,7 +362,6 @@ textarea {
 }
 
 #produk-1-input, #produk-2-input{
-	
 	-webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
