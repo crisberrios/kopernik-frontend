@@ -7,5 +7,9 @@ var kpn = {
   pingServer: 'http://localhost:3000/ping',
   dataServer: 'http://localhost:3000/data',
   tab: false,
-  nameSpace: 'Kopernik'
+  nameSpace: 'Kopernik',
+  agentMatch: function(val) {
+    'use strict';
+    return /[a-zA-Z]{2}.?[\d]{4,5}$/.test(val);
+  }
 };

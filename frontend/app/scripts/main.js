@@ -1,52 +1,3 @@
-/*List of fields:
-KwitNumber:
-  #kwitNumber-input: number
-Nama Lengcap:
-  #nama-input : textarea
-Jenis Kelami:
-  #jenisKelami-P text input
-  #jenisKelami-L text input
-Nomor Telepon
-  #nomor-telepon-input textarea
-Alamat
-  #alamat-1-input text
-  #alamat-2-input text
-Informasi Produk
-  #produk-1-input text
-  #produk-2-input text
-  #produk-3-input text
-Nomor Seri
-  #nomor-seri-1-input text
-  #nomor-seri-1-input text
-  #nomor-seri-1-input text
-Tanggal
-  #tanggal-input date
-Stempel
-  #stempel-input textarea
-Informasi Harga
-
- harga-1-1-input number
- harga-1-2-input number
- harga-1-3-input number
- harga-2-1-input number
- harga-2-2-input number
- harga-2-3-input number
- harga-3-1-input number
- harga-3-2-input number
- harga-3-3-input number
-
-Nama Penjual & Telepon
- #nama-telepon-input textarea
-Total Harga Pesann
- #total-harga number
-Cicil
- #cicil-1 number
- #cicil-2 number
- #cicil-3 number
- #cicil-4 number
-Submit
- #submit
- */
 //checking of green boxes
 $(' textarea, input:not(.line-harga, #kwitNumber-input)').focus(function() {
   'use strict';
@@ -65,17 +16,18 @@ $(' textarea, input:not(.line-harga, #kwitNumber-input)').focus(function() {
   });
 
 
-//Gender input behaviour
+//Gender input greenbox behaviour
 $('.gender').on('click',function(){
   'use strict';
-	$('#jenisKelami div:first').addClass('lightgreen');
+	$('div #jenisKelami .smallBox').addClass('lightgreen');
 		$('.gender').on('blur',function(){
-			$('#jenisKelami div:first').removeClass('lightgreen');
+			$('div #jenisKelami .smallBox').removeClass('lightgreen');
 		});
 });
 
-//Price inputs math behaviour
-$('.line-harga').keyup(function() {
+//Price fields math behaviour
+
+$('.line-harga').change(function() {
   'use strict';
   var jumlah, hargaPerUnit, lineTotal=0;
   var subTotal = [];
@@ -93,6 +45,7 @@ $('.line-harga').keyup(function() {
       $('#harga-'+i+'-3-input').val(lineTotal.toLocaleString('in'))
         .removeClass('left')
         .addClass('center');
+      $('#harga-'+i+'-1-input').val(hargaPerUnit.toLocaleString('in'));
     }
     else {
       $('#harga-'+i+'-3-input').val(null)
@@ -107,7 +60,21 @@ $('.line-harga').keyup(function() {
       }).toLocaleString('in'))
       .change();
   }
+}).blur(function() {
+  //price multiplier
+  var val = 0;
+  if($(this).hasClass('price')) {
+    val = Number.parseInt($(this).val().replace(/[\D]/g,''));
+    if( val < 1000) {
+      $(this).val((val*1000).toLocaleString('in'));
+    }
+    $('.line-harga').change();
+}
+}).keyup(function() {
+  'use strict';
+  $('.line-harga').change();
 });
+
 //submit hover animation
 $('.enabled').hover(function(){
   'use strict';
@@ -124,17 +91,16 @@ $('.enabled').hover(function(){
 //Enable submit only on critical data filled in
 $('.required').change(function(){
   'use strict';
-  var agentMatch = /[a-zA-Z]{2}.?[\d]{4,5}$/;
   if(!$(this).val()) {
     $(this).addClass('red');
   } else{
     $(this).removeClass('red');
   }
-  if($(this).attr('id') === 'stempel-input' && !agentMatch.test($(this).val())) {
+  if($(this).attr('id') === 'stempel-input' && kpn.agentMatch($(this).val())) {
     $(this).addClass('red');
   }
 
-  if($('#nomor-seri-1-input').val() && agentMatch.test($('#stempel-input').val()) && $('#total-harga').val()) {
+  if($('#nomor-seri-1-input').val() && kpn.agentMatch($('#stempel-input').val()) && $('#total-harga').val()) {
     $('.submit').addClass('enabled')
       .removeClass('disabled');
   } else {
@@ -142,10 +108,11 @@ $('.required').change(function(){
       .addClass('disabled');
   }
 }).keyup(function() {
-  "use strict";
+  'use strict';
   $(this).change();
 });
 
+//formatting of total-harga field.
 $('#total-harga').change(function() {
   'use strict';
   var amount = Number.parseInt($(this).val().replace(/[\D]/g,''));
@@ -159,8 +126,17 @@ $('#total-harga').change(function() {
     }
 
   }
+}).blur(function() {
+  'use strict';
+  //Need to un-DRY the function.
+   var val = Number.parseInt($(this).val().replace(/[\D]/g, ''));
+    if (val < 1000) {
+      $(this).val((val * 1000).toLocaleString('in'));
+    $(this).change();
+  }
 });
 
+//missing fields alert on submit hover
 $('.submit').mouseenter(function( ) {
   'use strict';
   if($(this).hasClass('disabled')) {
@@ -176,7 +152,7 @@ $('.missing').mouseleave(function() {
 
 });
 
-//button selection
+//gender button behaviour
 $('#jenisKelami-L , #jenisKelami-P').click(function(){
   'use strict';
   if(this.id === 'jenisKelami-L'){
@@ -212,6 +188,18 @@ $('.produk-input').one('focus',function(){
 	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
 });
 
+//sub-agent validation
+$('#nama-penjual-2').keyup(function(){
+  'use strict';
+  var val = $(this).val();
+  if( val && !kpn.agentMatch(val)) {
+    $(this).addClass('red');
+  }
+  else {
+    $(this).removeClass('red');
+  }
+});
+
 //submit button
 $('#submit .enabled').click(function(){
   'use strict';
@@ -223,6 +211,10 @@ $('#submit .enabled').click(function(){
     telNumber: $('#nomor-telepon-input').val(),
     addressLine1: $('#alamat-1-input').val(),
     addressLine2: $('#alamat-2-input').val(),
+    addressLine3: $('#alamat-3-input').val(),
+    addressLine4: $('#alamat-4-input').val(),
+    addressLine5: $('#alamat-5-input').val(),
+    addressLine6: $('#alamat-6-input').val(),
     products1: $('#produk-1-input').val(),
     products2: $('#produk-2-input').val(),
     products3: $('#produk-3-input').val(),
@@ -245,7 +237,8 @@ $('#submit .enabled').click(function(){
     installmentPrice4: $('#cicil-4').val(),
     date: $('#tanggal-input').val(),
     kioskID: $('#stempel-input').val(),
-    kioskNameNumber: $('#nama-telepon-input').val()
+    kioskAgentName: $('#nama-penjual-1').val(),
+    kioskSubId: $('#nama-penjual-2').val()
   };
 
   kpn.store(obj, function() {
