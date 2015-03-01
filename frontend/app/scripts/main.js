@@ -96,7 +96,7 @@ $('.required').change(function(){
   } else{
     $(this).removeClass('red');
   }
-  if($(this).attr('id') === 'stempel-input' && kpn.agentMatch($(this).val())) {
+  if($(this).attr('id') === 'stempel-input' && !kpn.agentMatch($(this).val())) {
     $(this).addClass('red');
   }
 
