@@ -1,7 +1,12 @@
 /**
  * Created by cristian on 24/02/15.
  */
-kpn.store = function store(obj,callback) {
+kpn.clearForm = function clearForm() {
+  'use strict';
+  $('form').trigger('reset');
+};
+
+kpn.store = function store(obj) {
   'use strict';
   var context = this;
   var nameSpace = this.nameSpace;
@@ -13,7 +18,7 @@ kpn.store = function store(obj,callback) {
     storageObj[nameSpace] = tmp;
     chrome.storage.local.set(storageObj, function() {
       context.addTotal(obj.saleTotal);
-      callback();
+      context.clearForm();
     });
   });
 };

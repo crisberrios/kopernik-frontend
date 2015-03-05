@@ -201,9 +201,9 @@ $('#nama-penjual-2').keyup(function(){
 });
 
 //submit button
-$('#submit .enabled').click(function(){
+$('form').submit(function(event){
   'use strict';
-
+  event.preventDefault();
   var obj = {
     kwitNumber: $('#kwitNumber-input').val(),
     name: $('#nama-input').val(),
@@ -240,11 +240,8 @@ $('#submit .enabled').click(function(){
     kioskAgentName: $('#nama-penjual-1').val(),
     kioskSubId: $('#nama-penjual-2').val()
   };
-
-  kpn.store(obj, function() {
-    $('#kopernik-form').reset();
-  });
-
+  console.log('saving...');
+  kpn.store(obj);
 });
 
 kpn.updateTotal();
