@@ -547,6 +547,17 @@ p.stempel-text{
 .hidden {
   display:none;
 }
+
+.whiteOnWhite{
+	background: #ffffff;
+	height: 33px;
+	width: 392px;
+	position: relative;
+	left: 4px;
+	border-radius: 10px;
+	margin-bottom: 4px;
+}
+
 .alamat-input {
   font-size: 1.3em;
   display: inline-block;
@@ -554,7 +565,7 @@ p.stempel-text{
   padding: 4px;
 }
 #alamat-1-input, #alamat-3-input, #alamat-4-input, #alamat-6-input {
-  width: 35%;
+  width: 33%;
 
 }
 #alamat-2-input, #alamat-5-input {
