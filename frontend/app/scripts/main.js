@@ -171,20 +171,20 @@ $('#jenisKelami-L , #jenisKelami-P').click(function(){
 //populate dropdown menu
 $('.produk-input').one('focus',function(){
 	'use strict';
-	var option1 = $('<option></option>').attr('value','').append(' ');
-	var option2 = $('<option></option>').attr('value','NAZK').append('Nazava Kecil');
-	var option3 = $('<option></option>').attr('value','NAZ1').append('Nazava 1');
-	var option4 = $('<option></option>').attr('value','NAZXL').append('Nazava XL');
-	var option5 = $('<option></option>').attr('value','UBS').append('Kompor Standard');
-	var option6 = $('<option></option>').attr('value','UBJ').append('Kompor Jumbo');
-	var option7 = $('<option></option>').attr('value','BBOX').append('Bright Box');
-	var option8 = $('<option></option>').attr('value','S20').append('S20 d.light S20');
-	var option9 = $('<option></option>').attr('value','S300').append('S300 d.light S300');
-	var option10 = $('<option></option>').attr('value','BBULB').append('Bright Bulb');
-	var option11 = $('<option></option>').attr('value','PERM').append('Permanet');
-	var option12 = $('<option></option>').attr('value','KERAN').append('Keran Air');
-	var option13 = $('<option></option>').attr('value','FILTER').append('Batu Filter');
-	var option14 = $('<option></option>').attr('value','UNSPECIFIED').append('Tak Tertulis');
+	var option1 = $('<option></option>').attr('value','').append(' '),
+	option2 = $('<option></option>').attr('value','NAZK').append('NAZK'),
+	option3 = $('<option></option>').attr('value','NAZ1').append('NAZ1'),
+	option4 = $('<option></option>').attr('value','NAZXL').append('NAZXL'),
+	option5 = $('<option></option>').attr('value','UBS').append('UBS'),
+	option6 = $('<option></option>').attr('value','UBJ').append('UBJ'),
+	option7 = $('<option></option>').attr('value','BBOX').append('BBOX'),
+	option8 = $('<option></option>').attr('value','S20').append('S20'),
+	option9 = $('<option></option>').attr('value','S300').append('S300'),
+	option10 = $('<option></option>').attr('value','BBULB').append('BBULB'),
+	option11 = $('<option></option>').attr('value','PERM').append('PERM'),
+	option12 = $('<option></option>').attr('value','KERAN').append('KERAN'),
+	option13 = $('<option></option>').attr('value','FILTER').append('FILTER'),
+	option14 = $('<option></option>').attr('value','UNSPECIFIED').append('TAK TERTULIS');
 	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
 });
 
