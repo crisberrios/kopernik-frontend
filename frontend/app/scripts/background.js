@@ -1,3 +1,4 @@
+//checks online status by pinging the server defined in settings
 kpn.checkOnline = function checkOnline() {
   'use strict';
   $.get(this.pingServer)
@@ -9,10 +10,10 @@ kpn.checkOnline = function checkOnline() {
     });
 };
 
+//handles the online event by sending items and updating UI
 kpn.onlineHandler = function onlineHandler() {
   'use strict';
   var nameSpace = this.nameSpace;
-  $('.indicator').css('background','lightgreen');
   chrome.storage.local.get(nameSpace,function(arr) {
     if(arr[nameSpace].length > 0) {
       console.log('sending items: ' + JSON.stringify(arr));
@@ -23,21 +24,22 @@ kpn.onlineHandler = function onlineHandler() {
   });
 };
 
+//send items, passed as an array of objects.
 kpn.sendItems = function sendItems(arr) {
   'use strict';
   var context = this;
   if(!this.lock) {
     $.post(this.dataServer, JSON.stringify({'data': arr}))
       .success(function () {
-        console.log('send success');
+        console.log('Send success!');
         context.clearStorage(); // clear stored objects;
       })
       .fail(function () {
-        console.log('Error when sending data');
+        console.log('Error while sending data');
       });
   }
 };
-
+//inits storage on first install or storage clear.
 kpn.init = function init(nameSpace) {
   'use strict';
   nameSpace = nameSpace || this.nameSpace;
@@ -54,6 +56,7 @@ kpn.init = function init(nameSpace) {
     });
 };
 
+//starts checking for online status
 kpn.start = function start(interval) {
   'use strict';
   var context = this;
@@ -62,6 +65,7 @@ kpn.start = function start(interval) {
   }, interval);
 };
 
+//clears storage
 kpn.clearStorage = function clearStorage() {
   'use strict';
   var obj = {};
@@ -78,15 +82,16 @@ $(document).on('online',function() {
 //let's init the storage
 kpn.init('Kopernik');
 //let's start checking for online status
-kpn.start(10000);
-
+kpn.start(15000);
 
 var tabOpen = false;
 
+//Extension button behaviour
 chrome.browserAction.onClicked.addListener(function() {
+  'use strict';
   var actionUrl = chrome.extension.getURL('main.html');
   if(tabOpen === false) {
-    chrome.tabs.create({url: actionUrl, pinned: true}, function() {
+    chrome.tabs.create({url: actionUrl, pinned: false}, function() {
       'use strict';
       tabOpen = true;
       chrome.tabs.onRemoved.addListener(function() {

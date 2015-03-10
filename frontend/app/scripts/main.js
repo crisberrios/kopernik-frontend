@@ -1,32 +1,21 @@
 //checking of green boxes
-$(' textarea, input:not(.line-harga, #kwitNumber-input)').focus(function() {
+$(' textarea, input:not(.line-harga, #kwit-number-input)').focus(function() {
   'use strict';
   $(this)
     .closest('.normal-box:not(.little-box), .block-fat')
-    .find('.row>.topper>i, .smallBox')
+    .find('.row>.topper>i, .small-box')
     .addClass('lightgreen')
     .removeClass('white');
 })
   .blur(function() {
     'use strict';
     $(this).closest('.normal-box:not(.little-box), .block-fat')
-      .find('.row>.topper>i, .smallBox')
+      .find('.row>.topper>i, .small-box')
       .addClass('white')
       .removeClass('lightgreen');
   });
 
-
-//Gender input greenbox behaviour
-$('.gender').on('click',function(){
-  'use strict';
-	$('div #jenisKelami .smallBox').addClass('lightgreen');
-		$('.gender').on('blur',function(){
-			$('div #jenisKelami .smallBox').removeClass('lightgreen');
-		});
-});
-
 //Price fields math behaviour
-
 $('.line-harga').change(function() {
   'use strict';
   var jumlah, hargaPerUnit, lineTotal=0;
@@ -54,13 +43,14 @@ $('.line-harga').change(function() {
     }
   }
   if(subTotal.length > 0) {
-    $('#total-harga')
+    $('#total-harga-input')
       .val(subTotal.reduce(function(a,b) {
         return a+b;
       }).toLocaleString('in'))
       .change();
   }
 }).blur(function() {
+  'use strict';
   //price multiplier
   var val = 0;
   if($(this).hasClass('price')) {
@@ -72,7 +62,7 @@ $('.line-harga').change(function() {
 }
 }).keyup(function() {
   'use strict';
-  $('.line-harga').change();
+  $(this).change();
 });
 
 //submit hover animation
@@ -100,7 +90,7 @@ $('.required').change(function(){
     $(this).addClass('red');
   }
 
-  if($('#nomor-seri-1-input').val() && kpn.agentMatch($('#stempel-input').val()) && $('#total-harga').val()) {
+  if($('#nomor-seri-1-input').val() && kpn.agentMatch($('#stempel-input').val()) && $('#total-harga-input').val()) {
     $('.submit').addClass('enabled')
       .removeClass('disabled');
   } else {
@@ -112,8 +102,9 @@ $('.required').change(function(){
   $(this).change();
 });
 
+
 //formatting of total-harga field.
-$('#total-harga').change(function() {
+$('#total-harga-input, #cicil input').change(function() {
   'use strict';
   var amount = Number.parseInt($(this).val().replace(/[\D]/g,''));
   if (!$(this).val()) {
@@ -128,7 +119,6 @@ $('#total-harga').change(function() {
   }
 }).blur(function() {
   'use strict';
-  //Need to un-DRY the function.
    var val = Number.parseInt($(this).val().replace(/[\D]/g, ''));
     if (val < 1000) {
       $(this).val((val * 1000).toLocaleString('in'));
@@ -153,39 +143,51 @@ $('.missing').mouseleave(function() {
 });
 
 //gender button behaviour
-$('#jenisKelami-L , #jenisKelami-P').click(function(){
+$('button.gender').click(function(){
   'use strict';
-  if(this.id === 'jenisKelami-L'){
-    $('#jenisKelami-L').addClass('genderback');
-    $('#jenisKelami-P').removeClass('genderback');
-    $('.gender').attr('value','male');
-    //alert($('button').val());
-  }else{
-    $('#jenisKelami-P').addClass('genderback');
-    $('#jenisKelami-L').removeClass('genderback');
-    $('.gender').attr('value','female');
-    //alert($('button').val());
+  var jkl = $('#jenis-kelami-l');
+  var jkp = $('#jenis-kelami-p');
+  var g = $('.gender');
+  if (this.id === 'jenis-kelami-l'){
+    jkl.addClass('genderback');
+    jkp.removeClass('genderback');
+  } else{
+    jkp.addClass('genderback');
+    jkl.removeClass('genderback');
   }
+});
+//Gender input greenbox behaviour
+$('.gender').on('click',function(){
+  'use strict';
+  $('div #jenis-kelami .small-box').addClass('lightgreen');
+  $('.gender').on('blur',function(){
+    $('div #jenis-kelami .small-box').removeClass('lightgreen');
+  });
 });
 
 //populate dropdown menu
 $('.produk-input').one('focus',function(){
 	'use strict';
-	var option1 = $('<option></option>').attr('value','').append(' '),
-	option2 = $('<option></option>').attr('value','NAZK').append('NAZK'),
-	option3 = $('<option></option>').attr('value','NAZ1').append('NAZ1'),
-	option4 = $('<option></option>').attr('value','NAZXL').append('NAZXL'),
-	option5 = $('<option></option>').attr('value','UBS').append('UBS'),
-	option6 = $('<option></option>').attr('value','UBJ').append('UBJ'),
-	option7 = $('<option></option>').attr('value','BBOX').append('BBOX'),
-	option8 = $('<option></option>').attr('value','S20').append('S20'),
-	option9 = $('<option></option>').attr('value','S300').append('S300'),
-	option10 = $('<option></option>').attr('value','BBULB').append('BBULB'),
-	option11 = $('<option></option>').attr('value','PERM').append('PERM'),
-	option12 = $('<option></option>').attr('value','KERAN').append('KERAN'),
-	option13 = $('<option></option>').attr('value','FILTER').append('FILTER'),
-	option14 = $('<option></option>').attr('value','UNSPECIFIED').append('TAK TERTULIS');
-	$(this).append(option1,option2,option3,option4,option5,option6,option7,option8,option9,option10,option11,option12,option13,option14);
+  var el = $(this);
+	var options =
+        [['',' '],
+        ['NAZK','NAZK'],
+        ['NAZ1','NAZ1'],
+        ['NAZXL','NAZXL'],
+        ['UBS','UBS'],
+        ['UBJ','UBJ'],
+        ['BBOX','BBOX'],
+        ['S20','S20'],
+        ['S300','S300'],
+        ['BBULB','BBULB'],
+        ['PERM','PERM'],
+        ['KERAN','KERAN'],
+        ['FILTER','FILTER'],
+        ['UNSPECIFIED','TAK TERTULIS']
+        ];
+  options.map(function(option) {
+    el.append($('<option value="'+option[0]+'">'+option[1]+'</option>'));
+  });
 });
 
 //sub-agent validation
@@ -199,15 +201,28 @@ $('#nama-penjual-2').keyup(function(){
     $(this).removeClass('red');
   }
 });
+//date validation
+$('#tanggal-input').keyup(function() {
+  'use strict';
+ var reg = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+  var val = $(this).val();
+  if( val && !reg.test(val)) {
+    $(this).addClass('red');
+  }
+  else {
+    $(this).removeClass('red');
+  }
+});
+
 
 //submit button
 $('form').submit(function(event){
   'use strict';
   event.preventDefault();
   var obj = {
-    kwitNumber: $('#kwitNumber-input').val(),
+    kwitNumber: $('#kwit-number-input').val(),
     name: $('#nama-input').val(),
-    gender: $('.gender').val(),
+    gender: $('.gender .genderback').val(),
     telNumber: $('#nomor-telepon-input').val(),
     addressLine1: $('#alamat-1-input').val(),
     addressLine2: $('#alamat-2-input').val(),
@@ -230,7 +245,7 @@ $('form').submit(function(event){
     totalPrice1: $('#harga-1-3-input').val(),
     totalPrice2: $('#harga-2-3-input').val(),
     totalPrice3: $('#harga-3-3-input').val(),
-    saleTotal: $('#total-harga').val(),
+    saleTotal: $('#total-harga-input').val(),
     installmentPrice1: $('#cicil-1').val(),
     installmentPrice2: $('#cicil-2').val(),
     installmentPrice3: $('#cicil-3').val(),
@@ -240,9 +255,10 @@ $('form').submit(function(event){
     kioskAgentName: $('#nama-penjual-1').val(),
     kioskSubId: $('#nama-penjual-2').val()
   };
-  console.log('saving...');
   kpn.store(obj);
+}).on('reset',function() { //reset submit button
+  'use strict';
+  $('.required').val('').change();
 });
-
+//init
 kpn.updateTotal();
-

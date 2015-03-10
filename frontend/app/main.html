@@ -20,14 +20,14 @@
 	  <div id="kwit">
 	    <h1>KWITANSI</h1>
 	  </div>
-	  <div id="kwitNumber">
-	    <input id="kwitNumber-input" type="number" class="left" size="10" tabindex="1" placeholder="NO." autofocus/>
+	  <div id="kwit-number">
+	    <input id="kwit-number-input" type="number" class="left" size="10" tabindex="1" placeholder="NO." autofocus/>
 	  </div>
 	  <div id="logo">
 	    <img src="images/kopernik-logo-global.png"/>
 
 	  </div>
-	  <div id="headText">
+	  <div id="head-text">
 	    <p><a href="http://www.kopernik.info">www.kopernik.info</a> - <a href="mailto:kopernik@kopernik.info">kopernik@kopernik.info</a>
 	      - Kopernik adalah Yayasan Sosial yang terdaftar di Kementerian Hukum dan HAM. </p>
 
@@ -43,39 +43,39 @@
 	    <div class="topper">
 	      <p>INFORMASI GARANSI:</p>
 	    </div>
-	    <div class="topperNeighbor">
+	    <div class="topper-neighbor">
 	      <p>Melengkapi dan Simpan Kwitansi Untuk Kebutuhan Garansi!</p>
 	    </div>
 	  </div>
 	  <!-- end of first row -->
 
 	  <div class="row"> <!-- second row -->
-	    <div id="namaLengcap" class="normal-box">
+	    <div id="nama-lengcap" class="normal-box">
 	      <h2>NAMA LENGCAP PELANGGAN</h2>
 
-	      <div class="smallBox"></div>
-	      <div class="whiteBox">
+	      <div class="small-box"></div>
+	      <div class="white-box">
 	        <textarea maxlength="50" rows="2" cols="25" id="nama-input" tabindex="2"></textarea>
 	      </div>
 	    </div>
 
 	    <div class='connection'><i class="normal-connection"></i></div>
 
-	    <div id='jenisKelami' class="normal-box">
+	    <div id='jenis-kelami' class="normal-box">
 	      <h2>JENIS KELAMIN</h2>
 
-	      <div class="smallBox"></div>
-	      <button type="button" class="gender" id="jenisKelami-L" tabindex="3">L</button>
-	      <button type="button" class="gender" id="jenisKelami-P" tabindex="4">P</button>
+	      <div class="small-box"></div>
+	      <button type="button" class="gender" id="jenis-kelami-l" tabindex="3" value="male">L</button>
+	      <button type="button" class="gender" id="jenis-kelami-p" tabindex="4" value="female">P</button>
 	    </div>
 
 	    <div class="connection"><i class="normal-connection"></i></div>
 
-	    <div id="nomorTelepon" class="normal-box">
+	    <div id="nomor-telepon" class="normal-box">
 	      <h2 class="center">NOMOR TELEPON</h2>
 
-	      <div class="smallBox"></div>
-	      <div class="whiteBox">
+	      <div class="small-box"></div>
+	      <div class="white-box">
 	        <textarea maxlength="40" rows="2" cols="26" id="nomor-telepon-input" tabindex="5"></textarea>
 	      </div>
 	    </div>
@@ -85,9 +85,9 @@
 	    <div id="alamat" class="normal-box">
 	      <h2 class="center">ALAMAT</h2>
 
-	      <div class="smallBox"></div>
+	      <div class="small-box"></div>
         <div class="row">
-        	<div class="whiteOnWhite">
+        	<div class="white-on-white">
 		      <input class="line alamat-input" id="alamat-1-input" type="text" tabindex="6"
 		             placeholder="JL."/>
 		      <input class="line alamat-input" id="alamat-2-input" type="text" tabindex="7"
@@ -97,7 +97,7 @@
 	       </div>
         </div>
         <div class="row">
-        	<div class="whiteOnWhite">
+        	<div class="white-on-white">
 	            <input class="line alamat-input" id="alamat-4-input" type="text" tabindex="7"
 	               placeholder="DESA./KEL."/>
 	            <input class="line alamat-input" id="alamat-5-input" type="text" tabindex="7"
@@ -120,19 +120,19 @@
 	      <div class="normal-box big-box tan" id="produk">
 	        <h2 class="center">PRODUK</h2>
           <select class="line produk-input" id="produk-1-input">
-          	
+
           </select>
           <select class="line produk-input" id="produk-2-input">
-          	
+
           </select>
           <select class="line produk-input" id="produk-3-input">
-          	
+
           </select>
 	      </div>
-	      <div class="normal-box big-box tan" id="nomorSeri">
+	      <div class="normal-box big-box tan" id="nomor-seri">
 	        <h2 class="center">NOMOR SERI</h2>
 
-	        <div class="smallBox"></div>
+	        <div class="small-box"></div>
 	        <input type="text" class="line red required" id="nomor-seri-1-input" required tabindex="8"/>
 	        <input type="text" class="line" id="nomor-seri-2-input" tabindex="9"/>
 	        <input type="text" class="line" id="nomor-seri-3-input" tabindex="10"/>
@@ -145,7 +145,7 @@
 	        </div>
 	      </div>
 	      <div class="normal-box little-box" id="tanggal">
-	        <input type="date" class="line" id="tanggal-input"/>
+	        <input type="text" class="line" id="tanggal-input" placeholder="DD-MM-YYYY"/>
 	      </div>
 	    </div>
 	    <div class="connection"></div>
@@ -210,7 +210,7 @@
 	            <div class="topper white"><p>NAMA PENJUAL & TELEPON</p></div>
 	          </div>
 	          <div class="row">
-	            <div class="normal-box white" id="namaPenjual">
+	            <div class="normal-box white" id="nama-penjual">
                 <input class="line nama-penjual" id="nama-penjual-1" placeholder="NAMA / TELEPON" />
                 <input class="line nama-penjual" id="nama-penjual-2" placeholder="SA-XXXXX"/>
 	            </div>
@@ -226,8 +226,8 @@
 	            </div>
 	          </div>
 	          <div class="row">
-	            <div class="normal-box little-box" id="totalHarga">
-	              <input type="text" class="line left red required" id="total-harga" required placeholder="Rp."/>
+	            <div class="normal-box little-box" id="total-harga">
+	              <input type="text" class="line left red required" id="total-harga-input" required placeholder="Rp."/>
 	            </div>
 	          </div>
 	        </div>

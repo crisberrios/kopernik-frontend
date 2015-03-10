@@ -45,7 +45,7 @@ body {
   height: 500px;
 }
 
-#kwit, #kwitNumber, #headText, #logo {
+#kwit, #kwit-number, #head-text, #logo {
   display: inline-block;
   box-sizing: border-box;
   height: 50px;
@@ -74,12 +74,12 @@ body {
   font-weight: normal;
 }
 
-#kwitNumber {
+#kwit-number {
   float: left;
   padding-top: 5px;
 }
 
-#kwitNumber-input {
+#kwit-number-input {
   background: #fffaf7;
   border-radius: 10px;
   font-size: 1.8em;
@@ -89,13 +89,7 @@ body {
   z-index: 9999999;
 }
 
-#headText a {
-  text-decoration: none;
-  color: #8B7741;
-  font-weight: bold;
-}
-
-#headText {
+#head-text {
   width: 650px;
   height: 50px;
   padding: 10px 0 0 0;
@@ -103,7 +97,13 @@ body {
   float: left;
 }
 
-#headText > p {
+#head-text a {
+  text-decoration: none;
+  color: #8B7741;
+  font-weight: bold;
+}
+
+#head-text > p {
   font-size: 0.9em;
   color: #8B7741;
 }
@@ -150,7 +150,7 @@ body {
   height: 70px;
 }
 
-.smallBox {
+.small-box {
   width: 17px;
   height: 17px;
   border-radius: 4px;
@@ -160,12 +160,11 @@ body {
   right: 6px;
 }
 
-
 .lightgreen{
 	background-color: lightgreen;
 }
 
-.whiteBox {
+.white-box {
   width: 95%;
   margin: 0 auto;
   height: 70px;
@@ -282,7 +281,6 @@ textarea {
 
 }
 
-/* topper box, maybe DRY with smallBox */
 .topper > i {
   width: 13px;
   height: 13px;
@@ -294,7 +292,7 @@ textarea {
 
 }
 
-.topperNeighbor {
+.topper-neighbor {
   color: #8B7741;
   font-size: 1em;
   display: inline-block;
@@ -320,19 +318,18 @@ textarea {
 }
 
 /*Second row of input form */
-#namaLengcap {
+#nama-lengcap {
   width: 280px;
   overflow: hidden;
 }
-#namaLengcap textarea {
+#nama-lengcap textarea {
   font-size: 1.4em;
 }
 
-#jenisKelami {
+#jenis-kelami {
   width: 170px;
   text-align: left;
 }
-
 
 .gender{
    background: white;
@@ -348,10 +345,10 @@ textarea {
     border: 0;
 }
 
-#nomorTelepon {
+#nomor-telepon {
   width: 300px;
 }
-#nomorTelepon textarea {
+#nomor-telepon textarea {
   font-size: 1.5em;
 }
 
@@ -373,7 +370,7 @@ textarea {
 }
 
 
-#nomorSeri {
+#nomor-seri {
   width: 250px;
   border-radius: 10px 10px 10px 0;
   background: linear-gradient(to bottom, #413100,#413100 30px, #C4B693 65px, #C4B693 ) #C4B693;
@@ -404,7 +401,7 @@ p.stempel-text{
   font-weight: bold;
   font-size: 2em;
 }
-#namaPenjual textarea {
+#nama-penjual textarea {
   font-size: 1.3em;
   padding: 10px;
   margin: 5px;
@@ -446,15 +443,15 @@ p.stempel-text{
   text-align: left;
 }
 
-#namaPenjual {
+#nama-penjual {
   width: 280px;
 }
-#namaPenjual textarea {
+#nama-penjual textarea {
   color: #333;
 
 }
 
-#totalHarga {
+#total-harga {
   width: 205px;
   padding-top: 20px;
 }
@@ -548,7 +545,7 @@ p.stempel-text{
   display:none;
 }
 
-.whiteOnWhite{
+.white-on-white{
 	background: #ffffff;
 	height: 33px;
 	width: 392px;
@@ -561,8 +558,10 @@ p.stempel-text{
 .alamat-input {
   font-size: 1.3em;
   display: inline-block;
-  margin: 5px 2px 2px 2px;
+  margin: 2px 1px 2px 1px;
   padding: 4px;
+  border: 1px dashed lightgray;
+  border-radius: 10px;
 }
 #alamat-1-input, #alamat-3-input, #alamat-4-input, #alamat-6-input {
   width: 33%;

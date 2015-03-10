@@ -1,11 +1,14 @@
 /**
  * Created by cristian on 24/02/15.
  */
+
+//Clears input form by triggering a reset;
 kpn.clearForm = function clearForm() {
   'use strict';
   $('form').trigger('reset');
 };
 
+//Stores a form object into chrome local storage.
 kpn.store = function store(obj) {
   'use strict';
   var context = this;
@@ -22,6 +25,8 @@ kpn.store = function store(obj) {
     });
   });
 };
+
+//Adds total amount submitted to local storage and reflects it on user interface
 kpn.addTotal = function addTotal(amount) {
   'use strict';
   var context = this;
@@ -35,6 +40,8 @@ kpn.addTotal = function addTotal(amount) {
     });
   });
 };
+
+//updates user interface with total amount sent.
 kpn.updateTotal = function updateTotal(){
   'use strict';
   chrome.storage.local.get(['totalAmount','totalForms'],function(data) {
