@@ -28,7 +28,6 @@ time, mark, audio, video {
 * {
   font-family: "proxima_nova_rgregular","Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
-
 body {
   width: 100%;
   height: 100vh;
@@ -213,14 +212,13 @@ body {
 }
 
 .block-fat {
-  display: block;
+  display: inline-block;
   float: left;
 }
 
 .row {
   position:relative;
   display: table;
-  width: 100%;
   min-height: 20px;
 }
 
@@ -580,4 +578,57 @@ p.stempel-text{
   padding: 5px;
   border: 1px dotted #ddd;
   border-radius: 10px;
+}
+@media (max-width: 1180px) {
+  .container {
+    width: 720px;
+    height: 100%;
+    display: block;
+    padding-left: 3px;
+  }
+  .connection,.pad-connection,.big-pad-connection,.normal-connection,.line-connection,.margin-connection {
+    display: none;
+  }
+  .omega {
+    width: 100%;
+  }
+  .fr {
+    float: right;
+    margin-right: 20px;
+    margin-top: -15px;
+  }
+  .fl {
+    float: left;
+  }
+   #jenis-kelami, #nama-lengcap, #nomor-telepon,#stempel, #cicil {
+    margin-bottom: 5px;
+  }
+  #jenis-kelami {
+    margin-left: 22px;
+  }
+  #alamat,#cicil  {
+    margin-left: 3px;
+  }
+  #nama-penjual,#total-harga,#pelanggan {
+    margin-left: 5px;
+  }
+  #pelanggan {
+    width: 195px;
+  }
+  #feedback {
+    width: 700px;
+  }
+  #head-text {
+    display: none;
+  }
+  .up {
+    position: relative;
+    top: -22px;
+    margin-left: 5px;
+  }
+  #stempel {
+    width: 240px;
+  }
+
+
 }
