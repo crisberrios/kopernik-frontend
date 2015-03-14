@@ -234,7 +234,7 @@ $('form').submit(function(event){
     products2: $('#produk-2-input').val(),
     products3: $('#produk-3-input').val(),
     serialNumber1: $('#nomor-seri-1-input').val(),
-    serialNumber2: $('nomor-seri-2-input').val(),
+    serialNumber2: $('#nomor-seri-2-input').val(),
     serialNumber3: $('#nomor-seri-3-input').val(),
     price1: $('#harga-1-1-input').val(),
     price2: $('#harga-2-1-input').val(),
@@ -253,7 +253,7 @@ $('form').submit(function(event){
     date: $('#tanggal-input').val(),
     kioskID: $('#stempel-input').val(),
     kioskAgentName: $('#nama-penjual-1').val(),
-    kioskSubId: $('#nama-penjual-2').val()
+    kioskSubID: $('#nama-penjual-2').val()
   };
   kpn.store(obj);
 }).on('reset',function() { //reset submit button

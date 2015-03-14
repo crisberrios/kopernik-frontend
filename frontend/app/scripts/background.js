@@ -14,10 +14,10 @@ kpn.checkOnline = function checkOnline() {
 kpn.onlineHandler = function onlineHandler() {
   'use strict';
   var nameSpace = this.nameSpace;
-  chrome.storage.local.get(nameSpace,function(arr) {
-    if(arr[nameSpace].length > 0) {
-      console.log('sending items: ' + JSON.stringify(arr));
-      kpn.sendItems(arr);
+  chrome.storage.local.get(nameSpace,function(obj) {
+    if(obj[nameSpace].length > 0) {
+      console.log('sending items: ' + JSON.stringify(obj[nameSpace]));
+      kpn.sendItems(obj[nameSpace]);
     } else {
       console.log('no items to send');
     }
@@ -29,7 +29,8 @@ kpn.sendItems = function sendItems(arr) {
   'use strict';
   var context = this;
   if(!this.lock) {
-    $.post(this.dataServer, JSON.stringify({'data': arr}))
+    arr.forEach(function(obj) {
+    $.post(context.dataServer,obj)
       .success(function () {
         console.log('Send success!');
         context.clearStorage(); // clear stored objects;
@@ -37,6 +38,7 @@ kpn.sendItems = function sendItems(arr) {
       .fail(function () {
         console.log('Error while sending data');
       });
+    });
   }
 };
 //inits storage on first install or storage clear.
