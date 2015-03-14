@@ -603,10 +603,7 @@ p.stempel-text{
    #jenis-kelami, #nama-lengcap, #nomor-telepon,#stempel, #cicil {
     margin-bottom: 5px;
   }
-  #jenis-kelami {
-    margin-left: 22px;
-  }
-  #alamat,#cicil  {
+  #alamat,#cicil, #jenis-kelami  {
     margin-left: 3px;
   }
   #nama-penjual,#total-harga,#pelanggan {
@@ -629,6 +626,17 @@ p.stempel-text{
   #stempel {
     width: 240px;
   }
-
-
+  #nama-lengcap {
+    width: 300px;
+  }
+  #produk, #nomor-seri {
+    height: 203px;
+  }
+  #produk .line,#nomor-seri .line {
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  #tanggal {
+    width: 240px;
+  }
 }
