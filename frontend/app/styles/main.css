@@ -579,6 +579,22 @@ p.stempel-text{
   border: 1px dotted #ddd;
   border-radius: 10px;
 }
+.terimakasih {
+  position: absolute;
+  background: #B2A176;
+  color: #413100;
+  width: 100vw;
+  display: none;
+  top: 35vh;
+  text-align: center;
+  z-index: 10;
+  font-size: 10em;
+  font-weight: bolder;
+  border-radius: 10px;
+  border: 3px solid white;
+  box-sizing: border-box;
+}
+
 @media (max-width: 1180px) {
   .container {
     width: 720px;

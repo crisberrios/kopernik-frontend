@@ -147,7 +147,6 @@ $('button.gender').click(function(){
   'use strict';
   var jkl = $('#jenis-kelami-l');
   var jkp = $('#jenis-kelami-p');
-  var g = $('.gender');
   if (this.id === 'jenis-kelami-l'){
     jkl.addClass('genderback');
     jkp.removeClass('genderback');
@@ -259,6 +258,7 @@ $('form').submit(function(event){
 }).on('reset',function() { //reset submit button
   'use strict';
   $('.required').val('').change();
+  $('.terimakasih').show().fadeOut(3000);
 });
 //init
 kpn.updateTotal();

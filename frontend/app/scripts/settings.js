@@ -4,8 +4,8 @@
 var kpn = {
   status: 'offline',
   apiKey: '01020304050607090A0B0C0D0E0F',
-  pingServer: 'http://localhost:3000/ping',
-  dataServer: 'http://localhost:3000/data',
+  pingServer: 'http://kopernik.herokuapp.com/ping',
+  dataServer: 'http://kopernik.herokuapp.com/data',
   tab: false,
   nameSpace: 'Kopernik',
   agentMatch: function(val) {
