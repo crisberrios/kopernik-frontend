@@ -2,7 +2,7 @@
   // Required
   "manifest_version": 2,
   "name": "Kopernik's Wonder Woman Initiative",
-  "version": "0.1.1",
+  "version": "0.2.0",
 
   // Recommended
   "description": "This extension is intended to enable offline data capture in remote regions of Indonesia with online sync.",

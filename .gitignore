@@ -7,3 +7,6 @@ node_modules
 project/backend/npm-debug.log
 frontend/dist.pem
 frontend/dist.crx
+
+frontend/app.pem
+frontend/app.crx

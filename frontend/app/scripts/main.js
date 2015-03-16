@@ -1,39 +1,49 @@
 //checking of green boxes
 $(' textarea, input:not(.line-harga, #kwit-number-input)').focus(function() {
   'use strict';
-  $(this)
-    .closest('.normal-box:not(.little-box), .block-fat')
-    .find('.row>.topper>i, .small-box')
-    .addClass('lightgreen')
-    .removeClass('white');
+  $(this).
+    closest('.normal-box:not(.little-box), .block-fat').
+    find('.row>.topper>i, .small-box').
+    addClass('lightgreen').
+    removeClass('white');
 })
   .blur(function() {
     'use strict';
-    $(this).closest('.normal-box:not(.little-box), .block-fat')
-      .find('.row>.topper>i, .small-box')
-      .addClass('white')
-      .removeClass('lightgreen');
+    $(this).
+      closest('.normal-box:not(.little-box), .block-fat').
+      find('.row>.topper>i, .small-box').
+      addClass('white').
+      removeClass('lightgreen');
   });
 
 //Price fields math behaviour
-$('.line-harga').change(function() {
+$('.line-harga').
+  change(function() {
   'use strict';
-  var jumlah, hargaPerUnit, lineTotal=0;
-  var subTotal = [];
-  var hargaPerUnitInput;
-  for(var i=1; i<=3 ;i++) {
+  var jumlah,
+      hargaPerUnit,
+      lineTotal= 0,
+      subTotal = [],
+      hargaPerUnitInput;
+
+  for (var i=1; i<=3 ;i++) {
     hargaPerUnitInput = $('#harga-'+i+'-1-input').val();
     hargaPerUnit = parseInt(hargaPerUnitInput.replace(/[\D]/g,''),10);
     jumlah = parseInt($('#harga-'+i+'-2-input').val(),10) || 1;
+
     if (Number.isInteger(hargaPerUnit)) {
+
       lineTotal = hargaPerUnit*jumlah;
       subTotal.push(lineTotal);
-      if($(this).hasClass('harga-1')) {
+
+      if ($(this).hasClass('harga-1')) {
         $('#harga-' + i + '-2-input').val(+$('#harga-' + i + '-2-input').val() || 1);
       }
-      $('#harga-'+i+'-3-input').val(lineTotal.toLocaleString('in'))
-        .removeClass('left')
-        .addClass('center');
+
+      $('#harga-'+i+'-3-input').val(lineTotal.toLocaleString('in')).
+        removeClass('left').
+        addClass('center');
+
       $('#harga-'+i+'-1-input').val(hargaPerUnit.toLocaleString('in'));
     }
     else {
@@ -42,25 +52,28 @@ $('.line-harga').change(function() {
         .removeClass('center');
     }
   }
-  if(subTotal.length > 0) {
-    $('#total-harga-input')
-      .val(subTotal.reduce(function(a,b) {
+
+  if (subTotal.length > 0) {
+    $('#total-harga-input').
+      val(subTotal.reduce(function(a,b) {
         return a+b;
-      }).toLocaleString('in'))
-      .change();
+      }).toLocaleString('in')).
+      change();
   }
-}).blur(function() {
+}).
+  blur(function() {
   'use strict';
   //price multiplier
   var val = 0;
-  if($(this).hasClass('price')) {
+  if ($(this).hasClass('price')) {
     val = Number.parseInt($(this).val().replace(/[\D]/g,''));
-    if( val < 1000) {
+    if (val < 1000) {
       $(this).val((val*1000).toLocaleString('in'));
     }
     $('.line-harga').change();
 }
-}).keyup(function() {
+}).
+  keyup(function() {
   'use strict';
   $(this).change();
 });
@@ -70,87 +83,98 @@ $('.enabled').hover(function(){
   'use strict';
   $(this).animate({
     opacity: 1
-  },400);
+  }, 400);
 },function(){
   'use strict';
   $(this).animate({
     opacity: 0.9
-  },400);
+  }, 400);
 });
 
 //Enable submit only on critical data filled in
-$('.required').change(function(){
+$('.required').
+  change(function(){
   'use strict';
-  if(!$(this).val()) {
+  if (!$(this).val()) {
     $(this).addClass('red');
-  } else{
+  } else {
     $(this).removeClass('red');
   }
-  if($(this).attr('id') === 'stempel-input' && !kpn.agentMatch($(this).val())) {
+  if ($(this).attr('id') === 'stempel-input' && !kpn.agentMatch($(this).val())) {
     $(this).addClass('red');
   }
 
-  if($('#nomor-seri-1-input').val() && kpn.agentMatch($('#stempel-input').val()) && $('#total-harga-input').val()) {
-    $('.submit').addClass('enabled')
-      .removeClass('disabled');
+  if ($('#nomor-seri-1-input').val() && kpn.agentMatch($('#stempel-input').val()) && $('#total-harga-input').val()) {
+    $('.submit').
+      addClass('enabled').
+      removeClass('disabled');
   } else {
-    $('.submit').removeClass('enabled')
-      .addClass('disabled');
+    $('.submit').
+      removeClass('enabled').
+      addClass('disabled');
   }
-}).keyup(function() {
+}).
+  keyup(function() {
   'use strict';
   $(this).change();
 });
 
 
 //formatting of total-harga field.
-$('#total-harga-input, #cicil input').change(function() {
+$('#total-harga-input, #cicil input').
+  change(function() {
   'use strict';
   var amount = Number.parseInt($(this).val().replace(/[\D]/g,''));
   if (!$(this).val()) {
-    $(this).addClass('left').removeClass('center');
+    $(this).
+      addClass('left').
+      removeClass('center');
   }
   else {
-    $(this).addClass('center').removeClass('left');
-    if(Number.isInteger(amount)) {
+    $(this).
+      addClass('center').removeClass('left');
+
+    if (Number.isInteger(amount)) {
       $(this).val(amount.toLocaleString('in'));
     }
-
   }
-}).blur(function() {
+}).
+  blur(function() {
   'use strict';
    var val = Number.parseInt($(this).val().replace(/[\D]/g, ''));
     if (val < 1000) {
       $(this).val((val * 1000).toLocaleString('in'));
-    $(this).change();
+      $(this).change();
   }
 });
 
 //missing fields alert on submit hover
 $('.submit').mouseenter(function( ) {
   'use strict';
-  if($(this).hasClass('disabled')) {
+  if ($(this).hasClass('disabled')) {
     $(this).hide();
     $('.missing').show();
   }
 });
+
 $('.missing').mouseleave(function() {
   'use strict';
   $(this).hide(0,function() {
     $('.submit').show();
   });
-
 });
 
 //gender button behaviour
 $('button.gender').click(function(){
   'use strict';
-  var jkl = $('#jenis-kelami-l');
-  var jkp = $('#jenis-kelami-p');
+  var jkl = $('#jenis-kelami-l'),
+      jkp = $('#jenis-kelami-p');
+
   if (this.id === 'jenis-kelami-l'){
     jkl.addClass('genderback');
     jkp.removeClass('genderback');
-  } else{
+  }
+  else {
     jkp.addClass('genderback');
     jkl.removeClass('genderback');
   }
@@ -167,8 +191,8 @@ $('.gender').on('click',function(){
 //populate dropdown menu
 $('.produk-input').one('focus',function(){
 	'use strict';
-  var el = $(this);
-	var options =
+  var el = $(this),
+      options =
         [['',' '],
         ['NAZK','NAZK'],
         ['NAZ1','NAZ1'],
@@ -184,6 +208,7 @@ $('.produk-input').one('focus',function(){
         ['FILTER','FILTER'],
         ['UNSPECIFIED','TAK TERTULIS']
         ];
+
   options.map(function(option) {
     el.append($('<option value="'+option[0]+'">'+option[1]+'</option>'));
   });
@@ -193,19 +218,22 @@ $('.produk-input').one('focus',function(){
 $('#nama-penjual-2').keyup(function(){
   'use strict';
   var val = $(this).val();
-  if( val && !kpn.agentMatch(val)) {
+
+  if ( val && !kpn.agentMatch(val)) {
     $(this).addClass('red');
   }
   else {
     $(this).removeClass('red');
   }
 });
+
 //date validation
 $('#tanggal-input').keyup(function() {
   'use strict';
- var reg = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-  var val = $(this).val();
-  if( val && !reg.test(val)) {
+ var reg = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/,
+     val = $(this).val();
+
+  if ( val && !reg.test(val)) {
     $(this).addClass('red');
   }
   else {
@@ -213,9 +241,9 @@ $('#tanggal-input').keyup(function() {
   }
 });
 
-
 //submit button
-$('form').submit(function(event){
+$('form').
+  submit(function(event){
   'use strict';
   event.preventDefault();
   var obj = {
@@ -255,10 +283,12 @@ $('form').submit(function(event){
     kioskSubID: $('#nama-penjual-2').val()
   };
   kpn.store(obj);
-}).on('reset',function() { //reset submit button
+}).
+  on('reset',function() { //reset submit button
   'use strict';
   $('.required').val('').change();
   $('.terimakasih').show().fadeOut(3000);
 });
+
 //init
 kpn.updateTotal();
