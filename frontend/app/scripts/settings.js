@@ -3,7 +3,7 @@
  */
 var kpn = {
   status: 'offline',
-  apiKey: '01020304050607090A0B0C0D0E0F',
+  apikey: 'test',
   pingServer: 'http://kopernik.herokuapp.com/ping',
   dataServer: 'http://kopernik.herokuapp.com/data',
   tab: false,

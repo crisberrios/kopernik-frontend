@@ -104,7 +104,7 @@ $('.required').
     $(this).addClass('red');
   }
 
-  if ($('#nomor-seri-1-input').val() && kpn.agentMatch($('#stempel-input').val()) && $('#total-harga-input').val()) {
+  if ($('#produk-1-input').val() && kpn.agentMatch($('#stempel-input').val()) && $('#total-harga-input').val()) {
     $('.submit').
       addClass('enabled').
       removeClass('disabled');
@@ -280,7 +280,8 @@ $('form').
     date: $('#tanggal-input').val(),
     kioskID: $('#stempel-input').val(),
     kioskAgentName: $('#nama-penjual-1').val(),
-    kioskSubID: $('#nama-penjual-2').val()
+    kioskSubID: $('#nama-penjual-2').val(),
+    apikey: kpn.apikey
   };
   kpn.store(obj);
 }).

@@ -28,9 +28,9 @@ kpn.onlineHandler = function onlineHandler() {
 kpn.sendItems = function sendItems(arr) {
   'use strict';
   var context = this;
-  if(!this.lock) {
+  if (!this.lock) {
     arr.forEach(function(obj) {
-    $.post(context.dataServer,obj)
+    $.post(context.dataServer, obj)
       .success(function () {
         console.log('Send success!');
         context.clearStorage(); // clear stored objects;
@@ -51,7 +51,7 @@ kpn.init = function init(nameSpace) {
   initObj.totalAmount = 0;
   initObj.totalForms = 0;
   chrome.storage.local.get(nameSpace,function(obj) {
-    if(Object.keys(obj).indexOf(nameSpace) <0) {
+    if (Object.keys(obj).indexOf(nameSpace) <0) {
       console.log (nameSpace+' not found, initializing');
       chrome.storage.local.set(initObj);
     }
