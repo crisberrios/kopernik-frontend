@@ -67,7 +67,7 @@
 
 	      <div class="small-box"></div>
 	      <button type="button" class="gender" id="jenis-kelami-l" tabindex="3" value="male">L</button>
-	      <button type="button" class="gender" id="jenis-kelami-p" tabindex="4" value="female">P</button>
+	      <button type="button" class="gender" id="jenis-kelami-p" tabindex="3" value="female">P</button>
 	    </div>
 
 	    <div class="connection"><i class="normal-connection"></i></div>
@@ -77,7 +77,7 @@
 
 	      <div class="small-box"></div>
 	      <div class="white-box">
-	        <textarea maxlength="40" rows="2" cols="26" id="nomor-telepon-input" tabindex="5"></textarea>
+	        <textarea maxlength="40" rows="2" cols="26" id="nomor-telepon-input" tabindex="4"></textarea>
 	      </div>
 	    </div>
 
@@ -89,21 +89,21 @@
 	      <div class="small-box"></div>
         <div class="row">
         	<div class="white-on-white">
-		      <input class="line alamat-input" id="alamat-1-input" type="text" tabindex="6"
+		      <input class="line alamat-input" id="alamat-1-input" type="text" tabindex="5"
 		             placeholder="JL."/>
-		      <input class="line alamat-input" id="alamat-2-input" type="text" tabindex="7"
+		      <input class="line alamat-input" id="alamat-2-input" type="text" tabindex="5"
 		             placeholder="RT/RW"/>
-	         <input class="line alamat-input" id="alamat-3-input" type="text" tabindex="7"
+	         <input class="line alamat-input" id="alamat-3-input" type="text" tabindex="5"
 	               placeholder="DS./BR."/>
 	       </div>
         </div>
         <div class="row">
         	<div class="white-on-white">
-	            <input class="line alamat-input" id="alamat-4-input" type="text" tabindex="7"
+	            <input class="line alamat-input" id="alamat-4-input" type="text" tabindex="5"
 	               placeholder="DESA./KEL."/>
-	            <input class="line alamat-input" id="alamat-5-input" type="text" tabindex="7"
+	            <input class="line alamat-input" id="alamat-5-input" type="text" tabindex="5"
 	               placeholder="KEC"/>
-	            <input class="line alamat-input" id="alamat-6-input" type="text" tabindex="7"
+	            <input class="line alamat-input" id="alamat-6-input" type="text" tabindex="5"
 	               placeholder="KOTA/KAB."/>
 	        </div>
         </div>
@@ -120,13 +120,13 @@
 	    <div class="row tan round fl">
 	      <div class="normal-box big-box tan" id="produk">
 	        <h2 class="center">PRODUK</h2>
-          <select class="line produk-input red required" id="produk-1-input">
+          <select class="line produk-input red required" id="produk-1-input" tabindex="6">
 
           </select>
-          <select class="line produk-input" id="produk-2-input">
+          <select class="line produk-input" id="produk-2-input" tabindex="11"/>
 
           </select>
-          <select class="line produk-input" id="produk-3-input">
+          <select class="line produk-input" id="produk-3-input" tabindex="16">
 
           </select>
 	      </div>
@@ -134,9 +134,9 @@
 	        <h2 class="center">NOMOR SERI</h2>
 
 	        <div class="small-box"></div>
-	        <input type="text" class="line" id="nomor-seri-1-input" tabindex="8"/>
-	        <input type="text" class="line" id="nomor-seri-2-input" tabindex="9"/>
-	        <input type="text" class="line" id="nomor-seri-3-input" tabindex="10"/>
+	        <input type="text" class="line" id="nomor-seri-1-input" tabindex="7">
+	        <input type="text" class="line" id="nomor-seri-2-input" tabindex="12"/>
+	        <input type="text" class="line" id="nomor-seri-3-input" tabindex="17"/>
 	      </div>
 	    </div>
 	    <div class="block-fat up">
@@ -146,7 +146,7 @@
 	        </div>
 	      </div>
 	      <div class="normal-box little-box" id="tanggal">
-	        <input type="text" class="line" id="tanggal-input" placeholder="Tgl-Bln-Thn"/>
+	        <input type="text" class="line" id="tanggal-input" placeholder="Tgl-Bln-Thn" tabindex="25"/>
 	      </div>
 	    </div>
 	    <div class="connection"></div>
@@ -159,7 +159,7 @@
 	      <div class="row">
 	        <div class="normal-box white" id="stempel">
 	          <p class="stempel-text">>>KOPERNIK</p>
-	          <input class="red line required" required id="stempel-input" placeholder="TK-XXXXX"/>
+	          <input class="red line required" required id="stempel-input" placeholder="TK-XXXXX" tabindex="26"/>
 	        </div>
 	      </div>
 	    </div>
@@ -186,21 +186,21 @@
 	        <i class="sign"></i>
 
 	        <h2 class="harga-1">TOTAL HARGA</h2>
-	        <input type="text" class="price line harga-1 line-harga" id="harga-1-1-input"/>
+	        <input type="text" class="price line harga-1 line-harga" id="harga-1-1-input" tabindex="8"/>
 	        <i class="sign">X</i>
-	        <input type="text" class="line harga-2 line-harga" id="harga-1-2-input"/>
+	        <input type="text" class="line harga-2 line-harga" id="harga-1-2-input" tabindex="9"/>
 	        <i class="sign">=</i>
-	        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-1-3-input"/>
-	        <input type="text" class="price line harga-1 line-harga" id="harga-2-1-input"/>
+	        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-1-3-input" tabindex="10"/>
+	        <input type="text" class="price line harga-1 line-harga" id="harga-2-1-input" tabindex="13"/>
 	        <i class="sign">X</i>
-	        <input type="text" class="line harga-2 line-harga" id="harga-2-2-input"/>
+	        <input type="text" class="line harga-2 line-harga" id="harga-2-2-input" tabindex="14"/>
 	        <i class="sign">=</i>
-	        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-2-3-input"/>
-	        <input type="text" class="price line harga-1 line-harga" id="harga-3-1-input"/>
+	        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-2-3-input" tabindex="15"/>
+	        <input type="text" class="price line harga-1 line-harga" id="harga-3-1-input" tabindex="18"/>
 	        <i class="sign">X</i>
-	        <input type="text" class="line harga-2 line-harga" id="harga-3-2-input"/>
+	        <input type="text" class="line harga-2 line-harga" id="harga-3-2-input" tabindex="19"/>
 	        <i class="sign">=</i>
-	        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-3-3-input"/>
+	        <input type="text" class="line harga-1 line-harga left" placeholder="Rp." id="harga-3-3-input" tabindex="20"/>
 
 	        <div class="harga-pad"></div>
 	        <div class="connection pad-connection">
@@ -212,8 +212,8 @@
 	          </div>
 	          <div class="row">
 	            <div class="normal-box white" id="nama-penjual">
-                <input class="line nama-penjual" id="nama-penjual-1" placeholder="NAMA / TELEPON" />
-                <input class="line nama-penjual" id="nama-penjual-2" placeholder="SA-XXXXX"/>
+                <input class="line nama-penjual" id="nama-penjual-1" placeholder="NAMA / TELEPON" tabindex="27"/>
+                <input class="line nama-penjual" id="nama-penjual-2" placeholder="SA-XXXXX" tabindex="28"/>
 	            </div>
 	          </div>
 	        </div>
@@ -228,7 +228,7 @@
 	          </div>
 	          <div class="row">
 	            <div class="normal-box little-box" id="total-harga">
-	              <input type="text" class="line left red required" id="total-harga-input" required placeholder="Rp."/>
+	              <input type="text" class="line left red required" id="total-harga-input" required placeholder="Rp." tabindex="29"/>
 	            </div>
 	          </div>
 	        </div>
@@ -249,10 +249,10 @@
 	    </div>
 	    <div class="row">
 	      <div class="normal-box tan" id="cicil">
-	        <input type="text" class="line left" id="cicil-1" placeholder="Rp."/>
-	        <input type="text" class="line left" id="cicil-2" placeholder="Rp."/>
-	        <input type="text" class="line left" id="cicil-3" placeholder="Rp."/>
-	        <input type="text" class="line left" id="cicil-4" placeholder="Rp."/>
+	        <input type="text" class="line left" id="cicil-1" placeholder="Rp." tabindex="21"/>
+	        <input type="text" class="line left" id="cicil-2" placeholder="Rp." tabindex="22"/>
+	        <input type="text" class="line left" id="cicil-3" placeholder="Rp." tabindex="23"/>
+	        <input type="text" class="line left" id="cicil-4" placeholder="Rp." tabindex="24"/>
 	      </div>
 	    </div>
 	    <div class="row">
@@ -262,7 +262,7 @@
 	    </div>
 	    <div class="row">
 	      <div class="normal-box white" id="pelanggan">
-	        <button class="submit disabled" id="kirim">KIRIM</button>
+	        <button class="submit disabled" id="kirim" tabindex="30">KIRIM</button>
 	        <div class="missing red hidden"><h3>CHECK INPUT FIELDS:</h3>
 	          <p>PRODUK</p>
 	        <p>STEMPEL TA/TR</p>

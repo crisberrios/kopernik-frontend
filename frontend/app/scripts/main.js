@@ -1,5 +1,5 @@
 //checking of green boxes
-$(' textarea, input:not(.line-harga, #kwit-number-input)').focus(function() {
+$(' textarea, input:not(.line-harga, #kwit-number-input), .gender').focus(function() {
   'use strict';
   $(this).
     closest('.normal-box:not(.little-box), .block-fat').

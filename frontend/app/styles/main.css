@@ -242,7 +242,7 @@ input[type=date]::-webkit-inner-spin-button{
   -webkit-appearance: none;
   margin: 0;
 }
-input:focus, select:focus {
+input:focus, select:focus, button:focus {
   box-shadow: inset 0 0 5px 1px #ffb500;
 }
 
