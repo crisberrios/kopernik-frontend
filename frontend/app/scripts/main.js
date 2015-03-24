@@ -206,7 +206,8 @@ $('.produk-input').one('focus',function(){
         ['PERM','PERM'],
         ['KERAN','KERAN'],
         ['FILTER','FILTER'],
-        ['UNSPECIFIED','TAK TERTULIS']
+        ['UNSPECIFIED','TAK TERTULIS'],
+        ['SHIPPING', 'SHIPPING']
         ];
 
   options.map(function(option) {
@@ -287,8 +288,9 @@ $('form').
 }).
   on('reset',function() { //reset submit button
   'use strict';
-  $('.required').val('').change();
-  $('.terimakasih').show().fadeOut(3000);
+    $('.gender').removeClass('genderback');
+    $('.required').val('').change();
+    $('.terimakasih').show().fadeOut(3000);
 });
 
 //init

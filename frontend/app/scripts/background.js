@@ -94,7 +94,6 @@ chrome.browserAction.onClicked.addListener(function() {
   var actionUrl = chrome.extension.getURL('main.html');
   if(tabOpen === false) {
     chrome.tabs.create({url: actionUrl, pinned: false}, function() {
-      'use strict';
       tabOpen = true;
       chrome.tabs.onRemoved.addListener(function() {
         tabOpen = false;
