@@ -3,9 +3,6 @@
  */
 var kpn = {
   status: 'offline',
-  apikey: 'test',
-  pingServer: 'http://kopernik.herokuapp.com/ping',
-  dataServer: 'http://kopernik.herokuapp.com/data',
   tab: false,
   nameSpace: 'Kopernik',
   agentMatch: function(val) {
@@ -13,3 +10,8 @@ var kpn = {
     return /[a-zA-Z]{2}.?[\d]{4,5}$/.test(val);
   }
 };
+
+//Configurations
+kpn.apikey = 'test';
+kpn.pingServer = 'http://kopernik.herokuapp.com/ping';
+kpn.dataServer = 'http://kopernik.herokuapp.com/data';

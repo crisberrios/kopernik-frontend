@@ -250,7 +250,7 @@ $('form').
   var obj = {
     kwitNumber: $('#kwit-number-input').val(),
     name: $('#nama-input').val(),
-    gender: $('.gender .genderback').val(),
+    gender: $('.gender.genderback').val(),
     telNumber: $('#nomor-telepon-input').val(),
     addressLine1: $('#alamat-1-input').val(),
     addressLine2: $('#alamat-2-input').val(),

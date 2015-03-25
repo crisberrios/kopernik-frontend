@@ -7,6 +7,7 @@ var $ = require('gulp-load-plugins')();
 gulp.task('styles', function () {
   return gulp.src('app/styles/*.css')
     .pipe($.plumber())
+    .pipe($.if('*.css', $.csso()))
     .pipe(gulp.dest('dist/styles'));
 });
 
@@ -21,18 +22,12 @@ gulp.task('html', ['styles'], function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('app/*.html')
-    .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.csso()))
-    .pipe(assets.restore())
-    .pipe($.useref())
     .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 gulp.task('js', function () {
   return gulp.src('app/scripts/*.js')
     .pipe($.uglify())
-    .pipe($.concat('main.js'))
     .pipe(gulp.dest('dist/scripts'));
 });
 
