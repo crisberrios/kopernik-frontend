@@ -533,10 +533,10 @@ p.stempel-text{
   margin-left: 10px;
   padding: 10px;
   color: #FF9900;
-  font-size: 1em;
+  font-size: 0.85em;
 }
 .missing p {
-  padding-top: 4px;
+  padding-top: 6px;
 }
 .hidden {
   display:none;

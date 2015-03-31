@@ -207,7 +207,7 @@ $('.produk-input').one('focus',function(){
         ['KERAN','KERAN'],
         ['FILTER','FILTER'],
         ['UNSPECIFIED','TAK TERTULIS'],
-        ['SHIPPING', 'SHIPPING']
+        ['BIAYA PENGIRIMAN', 'BIAYA PENGIRIMAN']
         ];
 
   options.map(function(option) {
