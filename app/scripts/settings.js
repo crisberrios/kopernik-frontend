@@ -12,6 +12,6 @@ var kpn = {
 };
 
 //Configurations
-kpn.apikey = 'test';
-kpn.pingServer = 'http://kopernik.herokuapp.com/ping';
-kpn.dataServer = 'http://kopernik.herokuapp.com/data';
+kpn.apikey = '4p1k3yt3s7';
+kpn.pingServer = 'http://localhost:3000/ping';
+kpn.dataServer = 'http://localhost:3000/data';

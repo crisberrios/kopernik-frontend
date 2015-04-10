@@ -3,10 +3,3 @@ dist
 bower_components
 node_modules
 .idea
-
-project/backend/npm-debug.log
-frontend/dist.pem
-frontend/dist.crx
-
-frontend/app.pem
-frontend/app.crx
